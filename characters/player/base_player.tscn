@@ -5,3 +5,5 @@
 
 [node name="BasePlayer" instance=ExtResource("1_rqm34")]
 script = ExtResource("1_j2pc8")
+speed = 300.0
+jump_strength = -400.0
