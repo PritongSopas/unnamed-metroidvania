@@ -1,0 +1,49 @@
+[gd_scene load_steps=12 format=3 uid="uid://bwxw5javxdhm2"]
+
+[ext_resource type="PackedScene" uid="uid://drkgblh2ui1bm" path="res://characters/Components/damage_receiver.tscn" id="1_pomy3"]
+[ext_resource type="Script" uid="uid://duk4m5micpyf1" path="res://characters/base_character.gd" id="1_xt3k7"]
+[ext_resource type="PackedScene" uid="uid://dw5v7xeul3n5n" path="res://characters/Components/health.tscn" id="2_xt3k7"]
+[ext_resource type="PackedScene" uid="uid://ia4ek8vei1lg" path="res://characters/Components/hurtbox.tscn" id="3_cag4a"]
+[ext_resource type="Script" uid="uid://dd1dilofbn5tw" path="res://characters/Components/hurtbox.gd" id="4_6ps22"]
+[ext_resource type="Texture2D" uid="uid://dsjhguhwfy0ci" path="res://assets/placeholder_sprite.png" id="5_dtm77"]
+[ext_resource type="PackedScene" uid="uid://ju1l7cthf3qo" path="res://characters/Components/hitbox.tscn" id="6_p0tnr"]
+[ext_resource type="PackedScene" uid="uid://c3hw2o4xkafok" path="res://characters/Components/base_movement.tscn" id="8_cag4a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_retdq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v625f"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_flllm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_dtm77")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BaseCharacter" type="CharacterBody2D"]
+script = ExtResource("1_xt3k7")
+
+[node name="DamageReceiver" parent="." instance=ExtResource("1_pomy3")]
+
+[node name="Health" parent="." instance=ExtResource("2_xt3k7")]
+
+[node name="Hurtbox" parent="." instance=ExtResource("3_cag4a")]
+script = ExtResource("4_6ps22")
+
+[node name="HurtboxShape" type="CollisionShape2D" parent="Hurtbox"]
+shape = SubResource("RectangleShape2D_retdq")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_v625f")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.08, 0.09615385)
+sprite_frames = SubResource("SpriteFrames_flllm")
+
+[node name="Hitbox" parent="." instance=ExtResource("6_p0tnr")]
+
+[node name="BaseMovement" parent="." instance=ExtResource("8_cag4a")]
