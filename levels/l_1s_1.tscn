@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=4 uid="uid://dryr83rajcpou"]
+[gd_scene load_steps=15 format=4 uid="uid://kgorcn3ynnqj"]
 
-[ext_resource type="PackedScene" path="res://characters/player/gato_player.tscn" id="2_5kfnk"]
+[ext_resource type="PackedScene" uid="uid://c45xwfm1pkvo2" path="res://characters/player/gato_player.tscn" id="2_5kfnk"]
 [ext_resource type="Texture2D" uid="uid://cxgfa76ron7p" path="res://assets/tiles/tileset.png" id="2_7jebm"]
 [ext_resource type="Texture2D" uid="uid://l0gj2ia4r4iy" path="res://assets/tiles/Background.png" id="3_5kfnk"]
 [ext_resource type="Texture2D" uid="uid://dm6s7npolmk3o" path="res://assets/tiles/Background_Light.png" id="4_ihdcb"]
 [ext_resource type="Texture2D" uid="uid://dxg4sm8p5ruib" path="res://assets/tiles/Tileset_12.png" id="4_xnrel"]
+[ext_resource type="PackedScene" uid="uid://c8kul3apk8hfi" path="res://characters/enemy/rat_enemy.tscn" id="6_3oesl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5kfnk"]
 texture = ExtResource("2_7jebm")
@@ -243,14 +244,6 @@ sources/0 = SubResource("TileSetAtlasSource_ihdcb")
 
 [node name="L1S1" type="Node2D"]
 
-[node name="BasePlayer" parent="." instance=ExtResource("2_5kfnk")]
-z_index = 2
-position = Vector2(199, -85)
-
-[node name="Camera2D" type="Camera2D" parent="BasePlayer"]
-position = Vector2(-49.75, 21.25)
-scale = Vector2(0.25, 0.25)
-
 [node name="Main_Platforms" type="TileMapLayer" parent="."]
 z_index = 2
 scale = Vector2(4, 4)
@@ -273,3 +266,10 @@ position = Vector2(192, -85)
 scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAAMAP//AAAAAAAAAAAJAP3/AAAAAAAAAAAMAPv/AAAAAAAAAADm//T/AAAAAAAAAADp//b/AAAAAAAAAADn//j/AAAAAAAAAADm//j/AAAAAAAAAAD1//H/AAAAAAAAAAD2//H/AAAAAAAAAADz/+//AAAAAAAAAAD2/+3/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_pa23s")
+
+[node name="GatoPlayer" parent="." instance=ExtResource("2_5kfnk")]
+position = Vector2(210, -78)
+
+[node name="RatEnemy" parent="." instance=ExtResource("6_3oesl")]
+position = Vector2(566, -96)
+scale = Vector2(4, 4)
