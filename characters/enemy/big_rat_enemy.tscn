@@ -14,7 +14,7 @@
 size = Vector2(28.75, 12.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qdbnj"]
-size = Vector2(6.25, 14.75)
+size = Vector2(18, 15.5)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_11x6l"]
 animations = [{
@@ -72,7 +72,7 @@ position = Vector2(0.375, 8.625)
 shape = SubResource("RectangleShape2D_7xlo5")
 
 [node name="Hitbox" type="CollisionShape2D" parent="Hitbox" index="0"]
-position = Vector2(11.875, 8.625)
+position = Vector2(6, 7.5)
 shape = SubResource("RectangleShape2D_qdbnj")
 
 [node name="EnemyStats" parent="." index="8"]
