@@ -6,14 +6,24 @@ extends Node
 var acceleration = 10.0
 var max_speed = 300.0
 
+var is_dashing = false
+var dash_time = 0.2
+var dash_timer = 0.0
+
+
 func _physics_process(delta: float) -> void:
 	apply_gravity(delta)
-	if parent.is_knocked_back:
+	
+	if is_dashing:
+		dash_timer -= delta
+		if dash_timer <= 0:
+			is_dashing = false
+	elif parent.is_knocked_back:
 		hurtbox.monitoring = false
 		parent.velocity.x = lerp(parent.velocity.x, 0.0, delta * 4.0)
 	else:
 		hurtbox.monitoring = true
-
+	
 	parent.knockback_timer -= delta
 	if parent.knockback_timer <= 0:
 		parent.is_knocked_back = false
@@ -24,12 +34,12 @@ func apply_gravity(delta: float) -> void:
 	parent.velocity += parent.get_gravity() * delta
 	
 func move_left(delta: float, modifier: float) -> void:
-	if not parent.is_knocked_back:
+	if not parent.is_knocked_back and not is_dashing:
 		var target_speed = -max_speed * modifier
 		parent.velocity.x = lerp(parent.velocity.x, target_speed, acceleration * delta)
 
 func move_right(delta: float, modifier: float) -> void:
-	if not parent.is_knocked_back:
+	if not parent.is_knocked_back and not is_dashing:
 		var target_speed = max_speed * modifier
 		parent.velocity.x = lerp(parent.velocity.x, target_speed, acceleration * delta)
 
@@ -38,4 +48,16 @@ func jump(delta: float, jump_strength: float) -> void:
 		parent.velocity.y = jump_strength
 
 func stop(delta: float) -> void:
-	parent.velocity.x = lerp(parent.velocity.x, 0.0, acceleration * delta)
+	if not is_dashing:
+		parent.velocity.x = lerp(parent.velocity.x, 0.0, acceleration * delta)
+
+func dash_to(speed: float, target: Node2D) -> void:
+	if not target:
+		return
+	
+	var dash_direction = (target.global_position - parent.global_position).normalized()
+	
+	parent.velocity = dash_direction * speed
+	
+	is_dashing = true
+	dash_timer = 0.2

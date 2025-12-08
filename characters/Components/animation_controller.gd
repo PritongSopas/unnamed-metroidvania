@@ -23,13 +23,13 @@ func _ready() -> void:
 	attack_controller.attack_finished.connect(_on_attack_finish)
 	health.died.connect(_on_death)
 	
-func _physics_process(delta) -> void:	
+func _physics_process(delta) -> void:
 	var v = parent.velocity
 	
 	if v.x != 0:
 		parent.is_facing_left = v.x < 0
 		
-	if sprite:
+	if sprite and not is_hurt:
 		sprite.flip_h = parent.is_facing_left
 		hitbox.scale.x = -1 if parent.is_facing_left else 1
 		

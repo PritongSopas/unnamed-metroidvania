@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhp8js4xw5r46"]
+
+[ext_resource type="Script" uid="uid://chn6rrnbdn0wa" path="res://characters/enemy/Components/dash_ai.gd" id="1_op37b"]
+
+[node name="DashAttackModule" type="Node2D"]
+script = ExtResource("1_op37b")
