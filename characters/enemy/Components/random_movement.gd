@@ -1,11 +1,12 @@
-extends CharacterBody2D
+extends Node
 
-@onready var movement = $BaseMovement
+@onready var parent = get_parent()
+@onready var movement = parent.get_node("BaseMovement")
 
-@export var speed = 300.0
-@export var jump_strength = -400.0
-@export var min_idle_interval = 2.0
-@export var max_idle_interval = 5.0
+@export var speed = 100.0
+@export var jump_strength = -200.0
+@export var min_idle_interval = 1.0
+@export var max_idle_interval = 2.0
 @export var move_duration = 1.0 
 
 var idle_timer: float = 0.0
@@ -35,7 +36,7 @@ func _physics_process(delta: float) -> void:
 		if idle_timer <= 0:
 			_start_move()
 
-	move_and_slide()
+	parent.move_and_slide()
 
 func _start_idle() -> void:
 	direction = 0
@@ -43,5 +44,5 @@ func _start_idle() -> void:
 	move_timer = 0
 
 func _start_move() -> void:
-	direction = randi() % 3 - 1  # -1, 0, 1
+	direction = randi() % 3 - 1
 	move_timer = move_duration

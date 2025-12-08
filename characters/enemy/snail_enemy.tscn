@@ -1,0 +1,171 @@
+[gd_scene load_steps=15 format=3 uid="uid://c4dk4sjeucu2u"]
+
+[ext_resource type="PackedScene" uid="uid://cjruph2wesfqx" path="res://characters/enemy/base_enemy.tscn" id="1_e0bqi"]
+[ext_resource type="Texture2D" uid="uid://b753geqd1pdaa" path="res://characters/enemy/snail_sprites/idle/0.png" id="2_d05ld"]
+[ext_resource type="Texture2D" uid="uid://bxjeuxfkeo26u" path="res://characters/enemy/snail_sprites/run/0.png" id="3_1cl2j"]
+[ext_resource type="Texture2D" uid="uid://caim14mm4gaxq" path="res://characters/enemy/snail_sprites/run/1.png" id="4_kf7cu"]
+[ext_resource type="Texture2D" uid="uid://ccvrsa8ca7djb" path="res://characters/enemy/snail_sprites/run/2.png" id="5_dxgxu"]
+[ext_resource type="Texture2D" uid="uid://b2i8hubhmc82t" path="res://characters/enemy/snail_sprites/run/3.png" id="6_74igf"]
+[ext_resource type="Texture2D" uid="uid://b6ln4qbio4n3p" path="res://characters/enemy/snail_sprites/run/4.png" id="7_4wm6b"]
+[ext_resource type="Texture2D" uid="uid://c0h6mhg8c0i0a" path="res://characters/enemy/snail_sprites/run/5.png" id="8_avca1"]
+[ext_resource type="Texture2D" uid="uid://bxdk38q881wqo" path="res://characters/enemy/snail_sprites/run/6.png" id="9_h51uj"]
+[ext_resource type="Texture2D" uid="uid://dxr7yose25jjb" path="res://characters/enemy/snail_sprites/run/7.png" id="10_ck8qn"]
+[ext_resource type="Texture2D" uid="uid://cjp6jfjnt8076" path="res://characters/enemy/snail_sprites/run/8.png" id="11_jgelm"]
+[ext_resource type="PackedScene" uid="uid://bylelijsvv0vp" path="res://characters/enemy/Components/random_movement.tscn" id="12_d05ld"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5tytw"]
+size = Vector2(11, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_buf8x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1cl2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kf7cu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dxgxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_74igf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4wm6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_avca1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_h51uj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ck8qn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jgelm")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1cl2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kf7cu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dxgxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_74igf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4wm6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_avca1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_h51uj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ck8qn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jgelm")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_d05ld")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1cl2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kf7cu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dxgxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_74igf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4wm6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_avca1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_h51uj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ck8qn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jgelm")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_1cl2j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kf7cu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dxgxu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_74igf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4wm6b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_avca1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_h51uj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ck8qn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_jgelm")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}]
+
+[node name="SnailEnemy" instance=ExtResource("1_e0bqi")]
+
+[node name="CollisionShape" parent="." index="2"]
+position = Vector2(-0.5625, 2.125)
+
+[node name="Hurtbox" type="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2(-0.5, 2)
+shape = SubResource("RectangleShape2D_5tytw")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." index="8"]
+sprite_frames = SubResource("SpriteFrames_buf8x")
+animation = &"attack"
+
+[node name="RandomMovement" parent="." index="9" instance=ExtResource("12_d05ld")]

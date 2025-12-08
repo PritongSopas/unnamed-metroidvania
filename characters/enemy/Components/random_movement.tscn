@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bylelijsvv0vp"]
+
+[ext_resource type="Script" uid="uid://bfmy162i33o8p" path="res://characters/enemy/Components/random_movement.gd" id="1_rb76v"]
+
+[node name="RandomMovement" type="Node2D"]
+script = ExtResource("1_rb76v")
