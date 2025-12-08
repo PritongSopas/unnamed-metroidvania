@@ -5,7 +5,7 @@ signal hit(amount: int, knockback: int, source: Node)
 @onready var hitbox = get_node("../Hitbox")
 @onready var parent = get_parent()
 
-@export var knockback: int = 300
+@export var knockback: int = 50
 @export var damage: int = 10
 
 func _ready() -> void:
