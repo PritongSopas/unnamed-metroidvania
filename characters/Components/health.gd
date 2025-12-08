@@ -1,6 +1,7 @@
 extends Node2D
 
-signal health_changed(current_health)
+signal damaged(current_health)
+signal healed(current_health)
 signal died
 
 @export var max_health: int = 67
@@ -11,8 +12,7 @@ func _ready() -> void:
 	
 func take_damage(amount: int) -> void:
 	current_health -= amount
-	emit_signal("health_changed", current_health)
-	print("Damaged: ", current_health)
+	emit_signal("damaged", current_health)
 
 	if current_health <= 0:
 		current_health = 0
@@ -24,4 +24,4 @@ func heal(amount: int) -> void:
 	if current_health > max_health:
 		current_health = max_health
 		
-	emit_signal("health_changed", current_health)
+	emit_signal("healed", current_health)

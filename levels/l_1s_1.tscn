@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://kgorcn3ynnqj"]
+[gd_scene load_steps=16 format=4 uid="uid://kgorcn3ynnqj"]
 
 [ext_resource type="PackedScene" uid="uid://c45xwfm1pkvo2" path="res://characters/player/gato_player.tscn" id="2_5kfnk"]
 [ext_resource type="Texture2D" uid="uid://cxgfa76ron7p" path="res://assets/tiles/tileset.png" id="2_7jebm"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dm6s7npolmk3o" path="res://assets/tiles/Background_Light.png" id="4_ihdcb"]
 [ext_resource type="Texture2D" uid="uid://dxg4sm8p5ruib" path="res://assets/tiles/Tileset_12.png" id="4_xnrel"]
 [ext_resource type="PackedScene" uid="uid://c8kul3apk8hfi" path="res://characters/enemy/rat_enemy.tscn" id="6_3oesl"]
+[ext_resource type="Script" uid="uid://duk4m5micpyf1" path="res://characters/base_character.gd" id="7_fn58m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5kfnk"]
 texture = ExtResource("2_7jebm")
@@ -269,7 +270,9 @@ tile_set = SubResource("TileSet_pa23s")
 
 [node name="GatoPlayer" parent="." instance=ExtResource("2_5kfnk")]
 position = Vector2(210, -78)
+scale = Vector2(4, 4)
 
 [node name="RatEnemy" parent="." instance=ExtResource("6_3oesl")]
 position = Vector2(566, -96)
 scale = Vector2(4, 4)
+script = ExtResource("7_fn58m")

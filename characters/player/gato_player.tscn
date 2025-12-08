@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c45xwfm1pkvo2"]
+[gd_scene load_steps=58 format=3 uid="uid://c45xwfm1pkvo2"]
 
 [ext_resource type="PackedScene" uid="uid://bke210a0biexb" path="res://characters/player/base_player.tscn" id="1_q3p4w"]
 [ext_resource type="Script" uid="uid://b3aqpwuy3qd8x" path="res://characters/player/gato_player.gd" id="2_0jdbr"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bthdtyktlchro" path="res://characters/player/gato_sprites/attack/0.png" id="2_v8b87"]
 [ext_resource type="Texture2D" uid="uid://bgw2jv1taqh72" path="res://characters/player/gato_sprites/attack/1.png" id="3_0jdbr"]
 [ext_resource type="Texture2D" uid="uid://b5c5map2cxhx" path="res://characters/player/gato_sprites/fall/1.png" id="3_fhkvh"]
-[ext_resource type="Texture2D" uid="uid://cexg5aaqltem1" path="res://characters/player/gato_sprites/idle/0.png" id="3_j3t74"]
+[ext_resource type="Texture2D" uid="uid://sg71higgk3r0" path="res://characters/player/gato_sprites/idle/0.png" id="3_j3t74"]
 [ext_resource type="Texture2D" uid="uid://dnsl0xsaml4na" path="res://characters/player/gato_sprites/jump/0.png" id="4_fhkvh"]
 [ext_resource type="Texture2D" uid="uid://cjjxk8xmnckke" path="res://characters/player/gato_sprites/run/0.png" id="4_hrwsw"]
 [ext_resource type="Texture2D" uid="uid://ctpfuls7lwar8" path="res://characters/player/gato_sprites/attack/2.png" id="4_swqdy"]
@@ -18,6 +18,42 @@
 [ext_resource type="Texture2D" uid="uid://c85u8p70qfdtl" path="res://characters/player/gato_sprites/attack/5.png" id="7_6x66u"]
 [ext_resource type="Texture2D" uid="uid://4805m05xg1gj" path="res://characters/player/gato_sprites/attack/6.png" id="8_0dedf"]
 [ext_resource type="Texture2D" uid="uid://cmvqinyvxa75a" path="res://characters/player/gato_sprites/attack/7.png" id="9_ttle5"]
+[ext_resource type="Texture2D" uid="uid://urstnxkmbmno" path="res://assets/sprites/blood_splatter/0.png" id="15_26mit"]
+[ext_resource type="Texture2D" uid="uid://bsmyolbl7den3" path="res://assets/sprites/blood_splatter/1.png" id="16_5cvq0"]
+[ext_resource type="Texture2D" uid="uid://bx6q0yrh8ukng" path="res://assets/sprites/blood_splatter/2.png" id="17_fiper"]
+[ext_resource type="Texture2D" uid="uid://trpflo31t24h" path="res://assets/sprites/blood_splatter/3.png" id="18_idqnc"]
+[ext_resource type="Texture2D" uid="uid://t2p5hl1lb7t4" path="res://assets/sprites/blood_splatter/4.png" id="19_nohg2"]
+[ext_resource type="Texture2D" uid="uid://cu0doua2f2nqb" path="res://assets/sprites/blood_splatter/5.png" id="20_k48ki"]
+[ext_resource type="Texture2D" uid="uid://dbothj0ua2quf" path="res://assets/sprites/blood_splatter/6.png" id="21_5fapl"]
+[ext_resource type="Texture2D" uid="uid://cvc6d6fqsevh2" path="res://assets/sprites/blood_splatter/7.png" id="22_ctlj7"]
+[ext_resource type="Texture2D" uid="uid://l6vjlm3ic4wr" path="res://assets/sprites/blood_splatter/8.png" id="23_h4hg7"]
+[ext_resource type="Texture2D" uid="uid://bw3qekldlwngi" path="res://assets/sprites/blood_splatter/9.png" id="24_hbtlc"]
+[ext_resource type="Texture2D" uid="uid://bf81lownns4r4" path="res://assets/sprites/blood_splatter/10.png" id="25_wfm2p"]
+[ext_resource type="Texture2D" uid="uid://c4428frwin4fj" path="res://assets/sprites/blood_splatter/11.png" id="26_a3vuh"]
+[ext_resource type="Texture2D" uid="uid://c4tqghmp5x5oq" path="res://assets/sprites/blood_splatter/12.png" id="27_61rwh"]
+[ext_resource type="Texture2D" uid="uid://bwbcsuu4xqdrv" path="res://assets/sprites/blood_splatter/13.png" id="28_g5wwy"]
+[ext_resource type="Texture2D" uid="uid://biphrxm5i4cfe" path="res://assets/sprites/blood_splatter/14.png" id="29_3ychn"]
+[ext_resource type="Texture2D" uid="uid://c5gr54j1g7c7p" path="res://assets/sprites/blood_splatter/15.png" id="30_vpnt3"]
+[ext_resource type="Texture2D" uid="uid://bpsbsvhsuj4bh" path="res://assets/sprites/blood_splatter/16.png" id="31_go08h"]
+[ext_resource type="Texture2D" uid="uid://booenkyji8jaw" path="res://assets/sprites/blood_splatter/17.png" id="32_slyf4"]
+[ext_resource type="Texture2D" uid="uid://bowaarvswnn4l" path="res://assets/sprites/blood_splatter/18.png" id="33_px2ls"]
+[ext_resource type="Texture2D" uid="uid://b66v1xrc35rgc" path="res://assets/sprites/blood_splatter/19.png" id="34_1ohnl"]
+[ext_resource type="Texture2D" uid="uid://d1g4truwfrsw6" path="res://assets/sprites/blood_splatter/20.png" id="35_ohjnj"]
+[ext_resource type="Texture2D" uid="uid://c2x312cdsc46p" path="res://assets/sprites/blood_splatter/21.png" id="36_dkwjg"]
+[ext_resource type="Texture2D" uid="uid://coblwsffuvfj" path="res://assets/sprites/blood_splatter/22.png" id="37_bwcaj"]
+[ext_resource type="Texture2D" uid="uid://b2axtd1oikkh0" path="res://assets/sprites/blood_splatter/23.png" id="38_xpvxe"]
+[ext_resource type="Texture2D" uid="uid://crtw1nw4awr2t" path="res://assets/sprites/blood_splatter/24.png" id="39_um357"]
+[ext_resource type="Texture2D" uid="uid://j57dobpqkg8o" path="res://characters/player/gato_sprites/hurt/0.png" id="40_wfm2p"]
+[ext_resource type="Texture2D" uid="uid://dnibsjcq47hiy" path="res://assets/sprites/blood_splatter/25.png" id="40_wlfnw"]
+[ext_resource type="Texture2D" uid="uid://dlwrwyvrwch8v" path="res://characters/player/gato_sprites/hurt/1.png" id="41_a3vuh"]
+[ext_resource type="Texture2D" uid="uid://ye1p37ivmvk5" path="res://assets/sprites/blood_splatter/26.png" id="41_eb6ss"]
+[ext_resource type="Texture2D" uid="uid://c3pgugh35ktn1" path="res://characters/player/gato_sprites/hurt/2.png" id="42_61rwh"]
+[ext_resource type="Texture2D" uid="uid://1lgh08gevmve" path="res://assets/sprites/blood_splatter/27.png" id="42_xerjb"]
+[ext_resource type="Texture2D" uid="uid://bjm714hfxr4lr" path="res://assets/sprites/blood_splatter/28.png" id="43_3a41g"]
+[ext_resource type="Texture2D" uid="uid://087gs7ht7bpd" path="res://characters/player/gato_sprites/hurt/3.png" id="43_g5wwy"]
+[ext_resource type="Texture2D" uid="uid://cw6kwedimqp02" path="res://characters/player/gato_sprites/hurt/4.png" id="44_3ychn"]
+[ext_resource type="Texture2D" uid="uid://du8lfqwwbtmjm" path="res://characters/player/gato_sprites/hurt/5.png" id="45_vpnt3"]
+[ext_resource type="Texture2D" uid="uid://7nv3dy3q811n" path="res://characters/player/gato_sprites/hurt/6.png" id="46_go08h"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xpemi"]
 animations = [{
@@ -45,6 +81,98 @@ animations = [{
 "speed": 12.0
 }, {
 "frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_26mit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5cvq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_fiper")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_idqnc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_nohg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_k48ki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_5fapl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ctlj7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_h4hg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_hbtlc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_wfm2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_a3vuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_61rwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_g5wwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_3ychn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_vpnt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_go08h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_slyf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_px2ls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_1ohnl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_ohjnj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_dkwjg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_bwcaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_xpvxe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_um357")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_wlfnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_eb6ss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_xerjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_3a41g")
+}],
+"loop": false,
+"name": &"death",
+"speed": 30.0
+}, {
+"frames": [{
 "duration": 2.0,
 "texture": ExtResource("2_5da0r")
 }, {
@@ -55,13 +183,34 @@ animations = [{
 "name": &"fall",
 "speed": 12.0
 }, {
-"frames": [],
-"loop": true,
-"name": &"hurt",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("40_wfm2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_a3vuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_61rwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_g5wwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_3ychn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_vpnt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_go08h")
+}],
+"loop": false,
+"name": &"hurt",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 10.0,
 "texture": ExtResource("3_j3t74")
 }],
 "loop": true,
@@ -107,6 +256,7 @@ size = Vector2(5, 9.25)
 size = Vector2(7, 6.5)
 
 [node name="GatoPlayer" instance=ExtResource("1_q3p4w")]
+scale = Vector2(1, 1)
 script = ExtResource("2_0jdbr")
 
 [node name="CollisionShape" parent="." index="2"]
@@ -114,7 +264,7 @@ position = Vector2(0.5390625, 3)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." index="7"]
 sprite_frames = SubResource("SpriteFrames_xpemi")
-animation = &"idle"
+animation = &"hurt"
 
 [node name="Hurtbox" type="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2(-1, 3)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sg71higgk3r0"
-path="res://.godot/imported/0.png-a3b6de2bdd1470a1cdc29b8a31e58172.ctex"
+uid="uid://cw6kwedimqp02"
+path="res://.godot/imported/4.png-dd48957f1c9609b607d22982c1988416.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/player/gato_sprites/idle/0.png"
-dest_files=["res://.godot/imported/0.png-a3b6de2bdd1470a1cdc29b8a31e58172.ctex"]
+source_file="res://characters/player/gato_sprites/hurt/4.png"
+dest_files=["res://.godot/imported/4.png-dd48957f1c9609b607d22982c1988416.ctex"]
 
 [params]
 
