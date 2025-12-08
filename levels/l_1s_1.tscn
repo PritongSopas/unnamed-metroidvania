@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://kgorcn3ynnqj"]
+[gd_scene load_steps=22 format=4 uid="uid://kgorcn3ynnqj"]
 
 [ext_resource type="PackedScene" uid="uid://c45xwfm1pkvo2" path="res://characters/player/gato_player.tscn" id="2_5kfnk"]
 [ext_resource type="Texture2D" uid="uid://cxgfa76ron7p" path="res://assets/tiles/tileset.png" id="2_7jebm"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dag8c1mi8pk7h" path="res://characters/enemy/big_rat_enemy.tscn" id="9_qywq6"]
 [ext_resource type="PackedScene" uid="uid://pmcnn5f5kxjo" path="res://levels/respawn_manager.tscn" id="10_kwrbs"]
 [ext_resource type="Script" uid="uid://ds3ua3xygmtrr" path="res://levels/respawn_manager.gd" id="11_iuuge"]
+[ext_resource type="PackedScene" uid="uid://drpr5vcyxd81p" path="res://levels/next_scene_point.tscn" id="12_gmmcw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5kfnk"]
 texture = ExtResource("2_7jebm")
@@ -309,3 +310,6 @@ offset_right = -866.0
 offset_bottom = -623.0
 scale = Vector2(2.843317, 3.3190188)
 color = Color(0, 0, 0, 1)
+
+[node name="NextScenePoint" parent="." instance=ExtResource("12_gmmcw")]
+position = Vector2(-502, -1339)

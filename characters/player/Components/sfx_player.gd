@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 		self.stream = jump_sfx[random_index]
 		play()
 
-func _on_damaged() -> void:
+func _on_damaged(health: int) -> void:
 	var random_index = randi() % hurt_sfx.size()
 	self.stream = hurt_sfx[random_index]
 	play()
