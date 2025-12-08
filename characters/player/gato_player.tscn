@@ -1,25 +1,57 @@
-[gd_scene load_steps=15 format=3 uid="uid://c45xwfm1pkvo2"]
+[gd_scene load_steps=24 format=3 uid="uid://c45xwfm1pkvo2"]
 
 [ext_resource type="PackedScene" uid="uid://bke210a0biexb" path="res://characters/player/base_player.tscn" id="1_q3p4w"]
+[ext_resource type="Script" uid="uid://b3aqpwuy3qd8x" path="res://characters/player/gato_player.gd" id="2_0jdbr"]
 [ext_resource type="Texture2D" uid="uid://dpyywn1unvkw3" path="res://characters/player/gato_sprites/fall/0.png" id="2_5da0r"]
+[ext_resource type="Texture2D" uid="uid://bthdtyktlchro" path="res://characters/player/gato_sprites/attack/0.png" id="2_v8b87"]
+[ext_resource type="Texture2D" uid="uid://bgw2jv1taqh72" path="res://characters/player/gato_sprites/attack/1.png" id="3_0jdbr"]
 [ext_resource type="Texture2D" uid="uid://b5c5map2cxhx" path="res://characters/player/gato_sprites/fall/1.png" id="3_fhkvh"]
 [ext_resource type="Texture2D" uid="uid://cexg5aaqltem1" path="res://characters/player/gato_sprites/idle/0.png" id="3_j3t74"]
 [ext_resource type="Texture2D" uid="uid://dnsl0xsaml4na" path="res://characters/player/gato_sprites/jump/0.png" id="4_fhkvh"]
 [ext_resource type="Texture2D" uid="uid://cjjxk8xmnckke" path="res://characters/player/gato_sprites/run/0.png" id="4_hrwsw"]
+[ext_resource type="Texture2D" uid="uid://ctpfuls7lwar8" path="res://characters/player/gato_sprites/attack/2.png" id="4_swqdy"]
 [ext_resource type="Texture2D" uid="uid://o6nxt7m7kc5i" path="res://characters/player/gato_sprites/jump/1.png" id="5_mhcyo"]
 [ext_resource type="Texture2D" uid="uid://cx8aoc2snv7p3" path="res://characters/player/gato_sprites/run/1.png" id="5_nt6wi"]
+[ext_resource type="Texture2D" uid="uid://t65t330wbm80" path="res://characters/player/gato_sprites/attack/3.png" id="5_wua2u"]
 [ext_resource type="Texture2D" uid="uid://cbpgad22xqtds" path="res://characters/player/gato_sprites/jump/2.png" id="6_24i1p"]
 [ext_resource type="Texture2D" uid="uid://b2c8l7ctdmaid" path="res://characters/player/gato_sprites/run/2.png" id="6_aix8p"]
+[ext_resource type="Texture2D" uid="uid://cur07h7tonimw" path="res://characters/player/gato_sprites/attack/4.png" id="6_kvlll"]
 [ext_resource type="Texture2D" uid="uid://bku3qlwpemp50" path="res://characters/player/gato_sprites/run/3.png" id="7_5da0r"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j3t74"]
-size = Vector2(7.75, 9.25)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhkvh"]
-size = Vector2(7, 6.5)
+[ext_resource type="Texture2D" uid="uid://c85u8p70qfdtl" path="res://characters/player/gato_sprites/attack/5.png" id="7_6x66u"]
+[ext_resource type="Texture2D" uid="uid://4805m05xg1gj" path="res://characters/player/gato_sprites/attack/6.png" id="8_0dedf"]
+[ext_resource type="Texture2D" uid="uid://cmvqinyvxa75a" path="res://characters/player/gato_sprites/attack/7.png" id="9_ttle5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xpemi"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_v8b87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0jdbr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_swqdy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wua2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_kvlll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6x66u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0dedf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ttle5")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 12.0
+}, {
 "frames": [{
 "duration": 2.0,
 "texture": ExtResource("2_5da0r")
@@ -30,6 +62,11 @@ animations = [{
 "loop": true,
 "name": &"fall",
 "speed": 12.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -71,11 +108,22 @@ animations = [{
 "speed": 12.0
 }]
 
-[node name="BasePlayer" instance=ExtResource("1_q3p4w")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j3t74"]
+size = Vector2(7.75, 9.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhkvh"]
+size = Vector2(7, 6.5)
+
+[node name="GatoPlayer" instance=ExtResource("1_q3p4w")]
 scale = Vector2(4, 4)
+script = ExtResource("2_0jdbr")
 
 [node name="CollisionShape" parent="." index="2"]
 position = Vector2(0.75, 3)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." index="7"]
+sprite_frames = SubResource("SpriteFrames_xpemi")
+animation = &"attack"
 
 [node name="Hurtbox" type="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2(0.875, 3.125)
@@ -84,7 +132,3 @@ shape = SubResource("RectangleShape2D_j3t74")
 [node name="Hitbox" type="CollisionShape2D" parent="Hitbox" index="0"]
 position = Vector2(7.75, -2.5)
 shape = SubResource("RectangleShape2D_fhkvh")
-
-[node name="Sprite" type="AnimatedSprite2D" parent="." index="7"]
-sprite_frames = SubResource("SpriteFrames_xpemi")
-animation = &"run"

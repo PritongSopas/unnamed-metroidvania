@@ -2,9 +2,15 @@ extends Node
 
 @onready var parent = get_parent()
 @onready var sprite = parent.get_node("Sprite")
+@onready var attack_controller = parent.get_node("AttackController")
 
+var is_attacking = false
 var is_facing_left = false
 
+func _ready() -> void:
+	attack_controller.attack_started.connect(_on_attack_start)
+	attack_controller.attack_finished.connect(_on_attack_finish)
+	
 func _physics_process(delta) -> void:
 	if not sprite: return
 	
@@ -16,6 +22,9 @@ func _physics_process(delta) -> void:
 	if sprite:
 		sprite.flip_h = is_facing_left
 	
+	if is_attacking:
+		return
+	
 	if not parent.is_on_floor() and v.y > 0:
 		sprite.play("fall")
 	elif not parent.is_on_floor():
@@ -24,3 +33,10 @@ func _physics_process(delta) -> void:
 		sprite.play("run")
 	else:
 		sprite.play("idle")
+
+func _on_attack_start() -> void:
+	is_attacking = true
+	sprite.play("attack")
+	
+func _on_attack_finish() -> void:
+	is_attacking = false

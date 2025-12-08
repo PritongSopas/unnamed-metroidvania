@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bke210a0biexb"]
+[gd_scene load_steps=4 format=3 uid="uid://bke210a0biexb"]
 
-[ext_resource type="Script" uid="uid://c8mhiq2kgxb0o" path="res://characters/player/Scripts/player_movement.gd" id="1_j2pc8"]
 [ext_resource type="PackedScene" uid="uid://bwxw5javxdhm2" path="res://characters/base_character.tscn" id="1_rqm34"]
+[ext_resource type="Script" uid="uid://dqooesl5lkh3c" path="res://characters/player/base_player.gd" id="2_xow7y"]
+[ext_resource type="PackedScene" uid="uid://bkx6ubnvxq0xi" path="res://characters/player/Components/player_movement.tscn" id="3_xow7y"]
 
 [node name="BasePlayer" instance=ExtResource("1_rqm34")]
-script = ExtResource("1_j2pc8")
-speed = 300.0
-jump_strength = -400.0
+script = ExtResource("2_xow7y")
+
+[node name="PlayerMovement" parent="." index="4" instance=ExtResource("3_xow7y")]

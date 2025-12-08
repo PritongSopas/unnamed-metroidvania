@@ -1,5 +1,8 @@
 extends Node
 
+signal attack_started
+signal attack_finished
+
 @onready var parent = get_parent()
 @onready var hitbox = parent.get_node("Hitbox")
 @onready var sprite = parent.get_node("Sprite")
@@ -7,32 +10,21 @@ extends Node
 var is_attacking = false
 var hitbox_frames = {}
 
-const attacks = {
-	"gato_bite": {
-		"damage": 10,
-		"hitboxes": {
-			"Hitbox": [4, 5, 6],
-		},
-	},
-}
-
 func _ready() -> void:
 	sprite.animation_finished.connect(_on_animation_finished)
 	for shape in hitbox.get_children():
 		shape.disabled = true
 		
-func attack(attack_name: String) -> void:
-	if is_attacking:
+func attack(frame_map: Dictionary) -> void:
+	if is_attacking or not frame_map.has("hitboxes"):
 		return
 		
-	if not attacks.has(attack_name):
-		push_warning("Unknown attack: %s" % attack_name)
-		return
-		
-	hitbox_frames = attacks[attack_name].hitboxes
+	print("gato attack!")
+
+	hitbox_frames = frame_map.hitboxes
 	is_attacking = true
 	hitbox.monitoring = true
-	parent.emit_signal("attack_started")
+	emit_signal("attack_started")
 
 func _physics_process(delta):
 	if is_attacking:
@@ -50,4 +42,4 @@ func end_attack() -> void:
 func _on_animation_finished() -> void:
 	if is_attacking and sprite.animation == "attack":
 		end_attack()
-		parent.emit_signal("attack_finished")
+		emit_signal("attack_finished")

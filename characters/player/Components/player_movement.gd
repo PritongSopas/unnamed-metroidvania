@@ -1,9 +1,8 @@
-extends CharacterBody2D
+extends Node
 
-signal attack_pressed
-
-@onready var movement = get_node("BaseMovement")
-@onready var attack_controller = get_node("AttackController")
+@onready var parent = get_parent()
+@onready var movement = parent.get_node("BaseMovement")
+@onready var attack_controller = parent.get_node("AttackController")
 
 @export var speed = 300.0
 @export var jump_strength = -600.0
@@ -22,4 +21,4 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("jump"):
 		movement.jump(jump_strength)
 
-	move_and_slide()
+	parent.move_and_slide()
