@@ -11,6 +11,11 @@ var is_attacking = false
 var is_dead = false
 var is_hurt = false
 
+var attack_timer: float = 0.0
+var hurt_timer: float = 0.0
+var attack_timeout: float = 1.0
+var hurt_timeout: float = 1.0
+
 func _ready() -> void:
 	health.damaged.connect(_on_hurt)
 	sprite.animation_finished.connect(_on_animation_finish)
@@ -18,9 +23,7 @@ func _ready() -> void:
 	attack_controller.attack_finished.connect(_on_attack_finish)
 	health.died.connect(_on_death)
 	
-func _physics_process(delta) -> void:
-	if not sprite or is_dead or is_hurt: return
-	
+func _physics_process(delta) -> void:	
 	var v = parent.velocity
 	
 	if v.x != 0:
@@ -29,13 +32,30 @@ func _physics_process(delta) -> void:
 	if sprite:
 		sprite.flip_h = parent.is_facing_left
 		hitbox.scale.x = -1 if parent.is_facing_left else 1
-	
+		
 	if is_attacking:
-		return
+		attack_timer += delta
+		if attack_timer > attack_timeout:
+			print("Attack stuck! Resetting state.")
+			is_attacking = false
+			attack_timer = 0.0
+	else:
+		attack_timer = 0.0 
+		
+	if is_hurt:
+		hurt_timer += delta
+		if hurt_timer > hurt_timeout:
+			print("Hurt stuck! Resetting state.")
+			is_hurt = false
+			hurt_timer = 0.0
+	else:
+		hurt_timer = 0.0 
 	
-	if not parent.is_on_floor() and v.y > 0:
+	if not sprite or is_dead or is_hurt or is_attacking: return
+
+	if not parent.is_on_floor() and v.y > 0 and sprite.sprite_frames.has_animation("fall"):
 		sprite.play("fall") 
-	elif not parent.is_on_floor():
+	elif not parent.is_on_floor() and sprite.sprite_frames.has_animation("jump"):
 		sprite.play("jump")
 	elif abs(v.x) > 10:
 		sprite.play("run")
@@ -44,6 +64,7 @@ func _physics_process(delta) -> void:
 
 func _on_attack_start() -> void:
 	is_attacking = true
+	
 	sprite.play("attack")
 	
 func _on_attack_finish() -> void:
@@ -51,13 +72,16 @@ func _on_attack_finish() -> void:
 
 func _on_death() -> void:
 	is_dead = true
-	sprite.play("death")
+	if sprite.sprite_frames.has_animation("hurt"):
+		sprite.play("death")
 	
 func _on_hurt(current_health: int) -> void:
 	is_hurt = true
-	is_attacking = false
-	sprite.play("hurt")
+	if sprite.sprite_frames.has_animation("hurt"):
+		sprite.play("hurt")
 	
 func _on_animation_finish() -> void:
 	if sprite.animation == "hurt":
 		is_hurt = false
+	if sprite.animation == "attack":
+		is_attacking = false

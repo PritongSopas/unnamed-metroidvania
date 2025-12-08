@@ -39,12 +39,14 @@ func end_attack() -> void:
 	for shape in hitbox.get_children():
 		shape.disabled = true
 
-func _on_animation_finished(animation_name: String) -> void:
-	if is_attacking and animation_name == "attack":
+func _on_animation_finished() -> void:
+	if is_attacking and sprite.animation == "attack":
 		end_attack()
 		emit_signal("attack_finished")
 
-func _on_damaged() -> void:
+func _on_damaged(health) -> void:
+	if not is_attacking: return
+	
 	end_attack()
 	emit_signal("attack_finished")
 	

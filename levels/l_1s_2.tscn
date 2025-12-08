@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://l0gj2ia4r4iy" path="res://assets/tiles/Background.png" id="2_v1sxv"]
 [ext_resource type="Texture2D" uid="uid://dm6s7npolmk3o" path="res://assets/tiles/Background_Light.png" id="3_2xxpc"]
 [ext_resource type="Texture2D" uid="uid://dxg4sm8p5ruib" path="res://assets/tiles/Tileset_12.png" id="4_ia7hi"]
-[ext_resource type="PackedScene" path="res://characters/player/gato_player.tscn" id="5_sxupd"]
-[ext_resource type="PackedScene" path="res://characters/enemy/rat_enemy.tscn" id="6_gmlia"]
+[ext_resource type="PackedScene" uid="uid://c45xwfm1pkvo2" path="res://characters/player/gato_player.tscn" id="5_sxupd"]
+[ext_resource type="PackedScene" uid="uid://c8kul3apk8hfi" path="res://characters/enemy/rat_enemy.tscn" id="6_gmlia"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5kfnk"]
 texture = ExtResource("1_riwx1")

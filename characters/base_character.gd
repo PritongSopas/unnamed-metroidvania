@@ -12,6 +12,7 @@ var is_facing_left = false
 
 func _ready() -> void:
 	sprite.animation_finished.connect(_on_animation_finished)
+	self.scale = Vector2(4, 4)
 
 func _on_animation_finished() -> void:
 	if sprite.animation == "death":
