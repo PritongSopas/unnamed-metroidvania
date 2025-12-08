@@ -18,13 +18,11 @@ func _ready() -> void:
 	_start_idle()
 
 func _physics_process(delta: float) -> void:
-	movement.apply_gravity(delta)
-
 	if move_timer > 0:
 		if direction > 0:
-			movement.move_right(delta, 1)
+			movement.move_right(delta, speed_modifier)
 		elif direction < 0:
-			movement.move_left(delta, 1)
+			movement.move_left(delta, speed_modifier)
 		else:
 			movement.stop(delta)
 		move_timer -= delta
@@ -35,8 +33,6 @@ func _physics_process(delta: float) -> void:
 		idle_timer -= delta
 		if idle_timer <= 0:
 			_start_move()
-
-	parent.move_and_slide()
 
 func _start_idle() -> void:
 	direction = 0
