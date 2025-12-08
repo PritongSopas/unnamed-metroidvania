@@ -1,9 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ia4ek8vei1lg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yk6dm"]
+[ext_resource type="Script" uid="uid://dd1dilofbn5tw" path="res://characters/Components/hurtbox.gd" id="1_t7ywb"]
 
 [node name="Hurtbox" type="Area2D"]
-scale = Vector2(0.083333336, 0.15789473)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_yk6dm")
+script = ExtResource("1_t7ywb")

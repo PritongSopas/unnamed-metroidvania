@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c45xwfm1pkvo2"]
+[gd_scene load_steps=15 format=3 uid="uid://c45xwfm1pkvo2"]
 
 [ext_resource type="PackedScene" uid="uid://bke210a0biexb" path="res://characters/player/base_player.tscn" id="1_q3p4w"]
 [ext_resource type="Texture2D" uid="uid://dpyywn1unvkw3" path="res://characters/player/gato_sprites/fall/0.png" id="2_5da0r"]
@@ -11,6 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://cbpgad22xqtds" path="res://characters/player/gato_sprites/jump/2.png" id="6_24i1p"]
 [ext_resource type="Texture2D" uid="uid://b2c8l7ctdmaid" path="res://characters/player/gato_sprites/run/2.png" id="6_aix8p"]
 [ext_resource type="Texture2D" uid="uid://bku3qlwpemp50" path="res://characters/player/gato_sprites/run/3.png" id="7_5da0r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j3t74"]
+size = Vector2(7.75, 9.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fhkvh"]
+size = Vector2(7, 6.5)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xpemi"]
 animations = [{
@@ -67,6 +73,17 @@ animations = [{
 
 [node name="BasePlayer" instance=ExtResource("1_q3p4w")]
 scale = Vector2(4, 4)
+
+[node name="CollisionShape" parent="." index="2"]
+position = Vector2(0.75, 3)
+
+[node name="Hurtbox" type="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2(0.875, 3.125)
+shape = SubResource("RectangleShape2D_j3t74")
+
+[node name="Hitbox" type="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(7.75, -2.5)
+shape = SubResource("RectangleShape2D_fhkvh")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." index="7"]
 sprite_frames = SubResource("SpriteFrames_xpemi")
