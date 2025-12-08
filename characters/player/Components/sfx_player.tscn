@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-[gd_scene load_steps=2 format=3 uid="uid://dldoyun5yehnf"]
-=======
-[gd_scene load_steps=0 format=3 uid="uid://dldoyun5yehnf"]
->>>>>>> 724d1965b8a7dbe9b033fde79b18875a60450f10
+[gd_scene load_steps=2 format=3 uid="uid://bddfsahafpe7d"]
 
 [ext_resource type="Script" uid="uid://2ftp0gjylvj3" path="res://characters/player/Components/sfx_player.gd" id="1_hc38o"]
 
-[node name="SfxPlayer" type="AudioStreamPlayer2D"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
 script = ExtResource("1_hc38o")
