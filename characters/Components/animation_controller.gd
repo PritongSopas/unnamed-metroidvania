@@ -26,7 +26,7 @@ func _physics_process(delta) -> void:
 		return
 	
 	if not parent.is_on_floor() and v.y > 0:
-		sprite.play("fall")
+		sprite.play("fall") 
 	elif not parent.is_on_floor():
 		sprite.play("jump")
 	elif abs(v.x) > 10:

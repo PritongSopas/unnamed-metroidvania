@@ -21,7 +21,7 @@ func attack(frame_map: Dictionary) -> void:
 		
 	print("gato attack!")
 
-	hitbox_frames = frame_map.hitboxes
+	hitbox_frames = frame_map["hitboxes"]
 	is_attacking = true
 	hitbox.monitoring = true
 	emit_signal("attack_started")
