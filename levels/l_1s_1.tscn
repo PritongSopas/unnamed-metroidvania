@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://kgorcn3ynnqj"]
+[gd_scene load_steps=18 format=4 uid="uid://kgorcn3ynnqj"]
 
 [ext_resource type="PackedScene" uid="uid://c45xwfm1pkvo2" path="res://characters/player/gato_player.tscn" id="2_5kfnk"]
 [ext_resource type="Texture2D" uid="uid://cxgfa76ron7p" path="res://assets/tiles/tileset.png" id="2_7jebm"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c8kul3apk8hfi" path="res://characters/enemy/rat_enemy.tscn" id="6_3oesl"]
 [ext_resource type="Script" uid="uid://duk4m5micpyf1" path="res://characters/base_character.gd" id="7_fn58m"]
 [ext_resource type="PackedScene" uid="uid://0qu0qt6x3s00" path="res://characters/enemy/ant_enemy.tscn" id="8_lr1n1"]
+[ext_resource type="PackedScene" uid="uid://dag8c1mi8pk7h" path="res://characters/enemy/big_rat_enemy.tscn" id="9_qywq6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5kfnk"]
 texture = ExtResource("2_7jebm")
@@ -280,3 +281,6 @@ script = ExtResource("7_fn58m")
 
 [node name="AntEnemy" parent="." instance=ExtResource("8_lr1n1")]
 position = Vector2(-1198, -526)
+
+[node name="BigRatEnemy" parent="." instance=ExtResource("9_qywq6")]
+position = Vector2(-727, -1008)

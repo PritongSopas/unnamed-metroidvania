@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=3 uid="uid://dag8c1mi8pk7h"]
+
+[ext_resource type="PackedScene" uid="uid://cjruph2wesfqx" path="res://characters/enemy/base_enemy.tscn" id="1_b167c"]
+[ext_resource type="Script" uid="uid://dp7em4d1xq2su" path="res://characters/enemy/Components/big_rat_enemy_stats.gd" id="2_0jq5p"]
+[ext_resource type="Script" uid="uid://dk7g8nj25d08c" path="res://characters/enemy/big_rat_enemy.gd" id="2_bylas"]
+[ext_resource type="Texture2D" uid="uid://b3nblnvhwnl5" path="res://characters/enemy/big_rat_sprites/idle/0.png" id="3_e5fps"]
+[ext_resource type="Texture2D" uid="uid://b8oq07xwbs0p0" path="res://characters/enemy/big_rat_sprites/run/0.png" id="4_bylas"]
+[ext_resource type="Texture2D" uid="uid://c3k3ehmgiuupr" path="res://characters/enemy/big_rat_sprites/run/1.png" id="5_jtwos"]
+[ext_resource type="Texture2D" uid="uid://bjhlgqica65gd" path="res://characters/enemy/big_rat_sprites/run/2.png" id="6_5x6em"]
+[ext_resource type="Texture2D" uid="uid://dwb0tl65qrtvy" path="res://characters/enemy/big_rat_sprites/run/3.png" id="7_pywfx"]
+[ext_resource type="PackedScene" uid="uid://ctmuf8wfhtgay" path="res://characters/enemy/Components/chaser_ai.tscn" id="9_jtwos"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xlo5"]
+size = Vector2(28.75, 12.25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qdbnj"]
+size = Vector2(6.25, 14.75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_11x6l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_bylas")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jtwos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5x6em")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pywfx")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_e5fps")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_bylas")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jtwos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5x6em")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pywfx")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}]
+
+[node name="BigRatEnemy" instance=ExtResource("1_b167c")]
+script = ExtResource("2_bylas")
+
+[node name="CollisionShape" parent="." index="2"]
+position = Vector2(-0.25, 8.25)
+
+[node name="Hurtbox" type="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2(0.375, 8.625)
+shape = SubResource("RectangleShape2D_7xlo5")
+
+[node name="Hitbox" type="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(11.875, 8.625)
+shape = SubResource("RectangleShape2D_qdbnj")
+
+[node name="EnemyStats" parent="." index="8"]
+script = ExtResource("2_0jq5p")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." index="9"]
+sprite_frames = SubResource("SpriteFrames_11x6l")
+animation = &"attack"
+
+[node name="ChaserAI" parent="." index="10" instance=ExtResource("9_jtwos")]
