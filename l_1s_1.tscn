@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://dwxxu848kr3fv"]
+[gd_scene load_steps=18 format=4 uid="uid://dwxxu848kr3fv"]
 
 [ext_resource type="PackedScene" uid="uid://c45xwfm1pkvo2" path="res://characters/player/gato_player.tscn" id="2_5kfnk"]
 [ext_resource type="Texture2D" uid="uid://cxgfa76ron7p" path="res://assets/tiles/tileset.png" id="2_7jebm"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dm6s7npolmk3o" path="res://assets/tiles/Background_Light.png" id="4_ihdcb"]
 [ext_resource type="Texture2D" uid="uid://dxg4sm8p5ruib" path="res://assets/tiles/Tileset_12.png" id="4_xnrel"]
 [ext_resource type="Texture2D" uid="uid://cy4y4iisjxun6" path="res://assets/sprites/bridge-tiles.png" id="6_pa23s"]
+[ext_resource type="Texture2D" uid="uid://orl7ffyokcvd" path="res://assets/sprites/dedbush-export.png" id="7_2ad3i"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5kfnk"]
 texture = ExtResource("2_7jebm")
@@ -327,3 +328,11 @@ position = Vector2(192, -96)
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAD2//b/AAAAAAEAAAD2//f/AAAAAAIAAAD3//X/AAABAAAAAAD3//b/AAABAAEAAAD4//X/AAACAAAAAAD4//b/AAACAAEAAAD7//X/AAAAAAMAAAD7//b/AAAAAAQAAAD8//X/AAABAAMAAAD8//b/AAABAAQAAAD9//X/AAACAAMAAAD9//b/AAACAAQAAAD9//f/AAACAAUAAAD5//X/AAAEAAMAAAD6//X/AAAFAAMAAAD2//X/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_leni6")
+
+[node name="Dead_Beast" type="StaticBody2D" parent="."]
+position = Vector2(286, -13)
+
+[node name="Sprite2D" type="Sprite2D" parent="Dead_Beast"]
+position = Vector2(56, -38)
+scale = Vector2(2, 2)
+texture = ExtResource("7_2ad3i")
