@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
+signal attack_pressed
+
 @onready var movement = get_node("BaseMovement")
+@onready var attack_controller = get_node("AttackController")
 
 @export var speed = 300.0
 @export var jump_strength = -600.0

@@ -6,7 +6,15 @@ extends Node
 var is_facing_left = false
 
 func _physics_process(delta) -> void:
+	if not sprite: return
+	
 	var v = parent.velocity
+	
+	if v.x != 0:
+		is_facing_left = v.x < 0
+		
+	if sprite:
+		sprite.flip_h = is_facing_left
 	
 	if not parent.is_on_floor() and v.y > 0:
 		sprite.play("fall")
@@ -16,10 +24,3 @@ func _physics_process(delta) -> void:
 		sprite.play("run")
 	else:
 		sprite.play("idle")
-		
-	if v.x != 0:
-		is_facing_left = v.x < 0
-		
-	sprite.flip_h = is_facing_left
-	
-	

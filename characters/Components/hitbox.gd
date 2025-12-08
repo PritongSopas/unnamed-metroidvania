@@ -14,5 +14,3 @@ func _on_body_entered(body: Node) -> void:
 	if body.has_node("Hurtbox"):
 		body.get_node("Hurtbox").emit_signal("hit", damage, parent)
 		emit_signal("hit", damage, parent)
-		
-# Add hitbox logic e.g., monitor on certain frames

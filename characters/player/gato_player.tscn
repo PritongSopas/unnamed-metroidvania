@@ -1,0 +1,73 @@
+[gd_scene load_steps=13 format=3 uid="uid://c45xwfm1pkvo2"]
+
+[ext_resource type="PackedScene" uid="uid://bke210a0biexb" path="res://characters/player/base_player.tscn" id="1_q3p4w"]
+[ext_resource type="Texture2D" uid="uid://dpyywn1unvkw3" path="res://characters/player/gato_sprites/fall/0.png" id="2_5da0r"]
+[ext_resource type="Texture2D" uid="uid://b5c5map2cxhx" path="res://characters/player/gato_sprites/fall/1.png" id="3_fhkvh"]
+[ext_resource type="Texture2D" uid="uid://cexg5aaqltem1" path="res://characters/player/gato_sprites/idle/0.png" id="3_j3t74"]
+[ext_resource type="Texture2D" uid="uid://dnsl0xsaml4na" path="res://characters/player/gato_sprites/jump/0.png" id="4_fhkvh"]
+[ext_resource type="Texture2D" uid="uid://cjjxk8xmnckke" path="res://characters/player/gato_sprites/run/0.png" id="4_hrwsw"]
+[ext_resource type="Texture2D" uid="uid://o6nxt7m7kc5i" path="res://characters/player/gato_sprites/jump/1.png" id="5_mhcyo"]
+[ext_resource type="Texture2D" uid="uid://cx8aoc2snv7p3" path="res://characters/player/gato_sprites/run/1.png" id="5_nt6wi"]
+[ext_resource type="Texture2D" uid="uid://cbpgad22xqtds" path="res://characters/player/gato_sprites/jump/2.png" id="6_24i1p"]
+[ext_resource type="Texture2D" uid="uid://b2c8l7ctdmaid" path="res://characters/player/gato_sprites/run/2.png" id="6_aix8p"]
+[ext_resource type="Texture2D" uid="uid://bku3qlwpemp50" path="res://characters/player/gato_sprites/run/3.png" id="7_5da0r"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xpemi"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("2_5da0r")
+}, {
+"duration": 999.0,
+"texture": ExtResource("3_fhkvh")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_j3t74")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_fhkvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mhcyo")
+}, {
+"duration": 999.0,
+"texture": ExtResource("6_24i1p")
+}],
+"loop": false,
+"name": &"jump",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_hrwsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nt6wi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_aix8p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5da0r")
+}],
+"loop": true,
+"name": &"run",
+"speed": 12.0
+}]
+
+[node name="BasePlayer" instance=ExtResource("1_q3p4w")]
+scale = Vector2(4, 4)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="." index="7"]
+sprite_frames = SubResource("SpriteFrames_xpemi")
+animation = &"run"
