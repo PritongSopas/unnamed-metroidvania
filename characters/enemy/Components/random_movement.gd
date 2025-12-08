@@ -3,7 +3,7 @@ extends Node
 @onready var parent = get_parent()
 @onready var movement = parent.get_node("BaseMovement")
 
-@export var speed = 100.0
+@export var speed_modifier = 0.3
 @export var jump_strength = -200.0
 @export var min_idle_interval = 1.0
 @export var max_idle_interval = 2.0
@@ -22,16 +22,16 @@ func _physics_process(delta: float) -> void:
 
 	if move_timer > 0:
 		if direction > 0:
-			movement.move_right(delta, speed)
+			movement.move_right(delta, 0)
 		elif direction < 0:
-			movement.move_left(delta, speed)
+			movement.move_left(delta, 0)
 		else:
-			movement.stop()
+			movement.stop(delta)
 		move_timer -= delta
 		if move_timer <= 0:
 			_start_idle()
 	else:
-		movement.stop()
+		movement.stop(delta)
 		idle_timer -= delta
 		if idle_timer <= 0:
 			_start_move()

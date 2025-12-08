@@ -19,8 +19,6 @@ func attack(frame_map: Dictionary) -> void:
 	if is_attacking or not frame_map.has("hitboxes"):
 		return
 		
-	print("gato attack!")
-
 	hitbox_frames = frame_map["hitboxes"]
 	is_attacking = true
 	hitbox.monitoring = true

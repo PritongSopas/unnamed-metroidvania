@@ -8,3 +8,8 @@
 script = ExtResource("2_xow7y")
 
 [node name="PlayerMovement" parent="." index="4" instance=ExtResource("3_xow7y")]
+
+[node name="Camera2D" type="Camera2D" parent="." index="9"]
+zoom = Vector2(5, 5)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true

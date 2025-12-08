@@ -1,11 +1,26 @@
 extends Node2D
 
-@onready var health = get_node("../Health")
-@onready var hurtbox = get_node("../Hurtbox")
+@onready var parent = get_parent()
+@onready var health = parent.get_node("Health")
+@onready var hurtbox = parent.get_node("Hurtbox")
+@onready var sprite = parent.get_node("Sprite")
 
 func _ready() -> void:
 	hurtbox.hit.connect(_on_hit)
 
-func _on_hit(amount: int, source: Node = null) -> void:
+func _on_hit(amount: int, knockback_strength: int, source: Node = null) -> void:
+	if source:
+		var knock_x = 1 if parent.global_position.x > source.global_position.x else -1
+		var knock_y = -0.3
+		parent.velocity = Vector2(knock_x * knockback_strength, knock_y * knockback_strength)
+		parent.is_knocked_back = true
+		parent.knockback_timer = 0.2
+		
+	flash_red()
 	health.take_damage(amount)
 	
+func flash_red() -> void:
+	var original_color = sprite.modulate
+	sprite.modulate = Color(1.0, 0.0, 0.0, 1.0)
+	await get_tree().create_timer(0.1).timeout
+	sprite.modulate = original_color

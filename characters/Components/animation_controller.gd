@@ -3,9 +3,9 @@ extends Node
 @onready var parent = get_parent()
 @onready var sprite = parent.get_node("Sprite")
 @onready var attack_controller = parent.get_node("AttackController")
+@onready var hitbox = parent.get_node("Hitbox")
 
 var is_attacking = false
-var is_facing_left = false
 
 func _ready() -> void:
 	attack_controller.attack_started.connect(_on_attack_start)
@@ -17,10 +17,11 @@ func _physics_process(delta) -> void:
 	var v = parent.velocity
 	
 	if v.x != 0:
-		is_facing_left = v.x < 0
+		parent.is_facing_left = v.x < 0
 		
 	if sprite:
-		sprite.flip_h = is_facing_left
+		sprite.flip_h = parent.is_facing_left
+		hitbox.scale.x = -1 if parent.is_facing_left else 1
 	
 	if is_attacking:
 		return

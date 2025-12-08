@@ -11,7 +11,7 @@
 [ext_resource type="Script" uid="uid://bgxfynsg3o6dk" path="res://characters/Components/hitbox.gd" id="8_dtm77"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v625f"]
-size = Vector2(10.875, 9.75)
+size = Vector2(7.6875, 9.75)
 
 [node name="BaseCharacter" type="CharacterBody2D"]
 script = ExtResource("1_xt3k7")

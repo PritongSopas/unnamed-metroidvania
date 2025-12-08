@@ -4,21 +4,17 @@ extends Node
 @onready var movement = parent.get_node("BaseMovement")
 @onready var attack_controller = parent.get_node("AttackController")
 
-@export var speed = 300.0
-@export var jump_strength = -600.0
+@export var speed_modifier = 1.0
+@export var jump_strength = -200.0
 
-func _physics_process(delta: float) -> void:
-	movement.apply_gravity(delta)
-	
+func _process(delta: float) -> void:
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction > 0:
-		movement.move_right(delta, speed)
+		movement.move_right(delta, speed_modifier)
 	elif direction < 0:
-		movement.move_left(delta, speed)
+		movement.move_left(delta, speed_modifier)
 	else:
-		movement.stop()
+		movement.stop(delta)
 		
 	if Input.is_action_pressed("jump"):
-		movement.jump(jump_strength)
-
-	parent.move_and_slide()
+		movement.jump(delta, jump_strength)
