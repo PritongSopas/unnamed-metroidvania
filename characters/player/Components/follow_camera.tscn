@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://csdyda1p3utns"]
+[gd_scene load_steps=0 format=3 uid="uid://csdyda1p3utns"]
 
 [node name="Camera2D" type="Camera2D"]
 zoom = Vector2(5, 5)
