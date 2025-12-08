@@ -171,6 +171,14 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("8_pebcy")
 }],
+"loop": false,
+"name": &"hurt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_pebcy")
+}],
 "loop": true,
 "name": &"idle",
 "speed": 12.0
@@ -210,6 +218,6 @@ shape = SubResource("RectangleShape2D_qcgy8")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." index="8"]
 sprite_frames = SubResource("SpriteFrames_b38eh")
-animation = &"idle"
+animation = &"hurt"
 
 [node name="ChaserAI" parent="." index="9" instance=ExtResource("13_rid6e")]

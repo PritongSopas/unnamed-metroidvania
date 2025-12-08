@@ -24,5 +24,5 @@ func shake(duration: float = 0.1, magnitude: float = 5.0) -> void:
 	shake_timer = duration
 	shake_magnitude = magnitude
 
-func _on_hit() -> void:
+func _on_hit(amount, knocback, source) -> void:
 	shake(0.15, 8)

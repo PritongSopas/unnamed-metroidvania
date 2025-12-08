@@ -1,3 +1,28 @@
-[gd_scene format=3 uid="uid://c01ppm6tvusc"]
+[gd_scene load_steps=5 format=3 uid="uid://c01ppm6tvusc"]
+
+[ext_resource type="PackedScene" uid="uid://c45xwfm1pkvo2" path="res://characters/player/gato_player.tscn" id="1_3kg5v"]
+[ext_resource type="Texture2D" uid="uid://b3l7aikujfx1v" path="res://icon.svg" id="1_w3tic"]
+[ext_resource type="PackedScene" uid="uid://c4dk4sjeucu2u" path="res://characters/enemy/snail_enemy.tscn" id="3_hys1b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1t8nw"]
 
 [node name="StartMenu" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(10, 233)
+scale = Vector2(7.6037173, 1.5931093)
+texture = ExtResource("1_w3tic")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1, 131)
+scale = Vector2(93.81166, 1e-05)
+shape = SubResource("RectangleShape2D_1t8nw")
+
+[node name="BasePlayer" parent="." instance=ExtResource("1_3kg5v")]
+scale = Vector2(1, 1)
+
+[node name="SnailEnemy" parent="." instance=ExtResource("3_hys1b")]
+position = Vector2(79, -7)
+scale = Vector2(1, 1)

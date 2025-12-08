@@ -3,6 +3,7 @@ extends Node
 @onready var parent = get_parent()
 @onready var movement = parent.get_node("BaseMovement")
 @onready var attack_controller = parent.get_node("AttackController")
+@onready var health = parent.get_node("Health")
 @onready var player = get_tree().get_first_node_in_group("player")
 @onready var player_health = player.get_node("Health")
 @onready var is_hurt = parent.get_node("AnimationController").is_hurt
@@ -19,12 +20,15 @@ var move_timer: float = 0.0
 var attack_timer: float = 0.0
 var direction: int = 0
 var is_player_dead = false
+var is_dead = false
 
 func _ready() -> void:
 	player_health.died.connect(_on_player_death)
+	health.died.connect(_on_death)
 	_start_idle()
-
+	
 func _physics_process(delta: float) -> void:
+	if is_dead: return
 	if not player or is_player_dead:
 		random_movement(delta)
 		return
@@ -84,3 +88,6 @@ func _start_move() -> void:
 	
 func _on_player_death() -> void:
 	is_player_dead = true
+	
+func _on_death() -> void:
+	is_dead = true
