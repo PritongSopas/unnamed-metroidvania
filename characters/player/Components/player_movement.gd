@@ -5,7 +5,7 @@ extends Node
 @onready var attack_controller = parent.get_node("AttackController")
 
 @export var speed_modifier = 1.0
-@export var jump_strength = -200.0
+@export var jump_strength = -550.0
 
 func _process(delta: float) -> void:
 	var direction := Input.get_axis("move_left", "move_right")

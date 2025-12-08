@@ -110,12 +110,11 @@ size = Vector2(7, 6.5)
 script = ExtResource("2_0jdbr")
 
 [node name="CollisionShape" parent="." index="2"]
-position = Vector2(-0.84375, 3)
+position = Vector2(0.5390625, 3)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." index="7"]
 sprite_frames = SubResource("SpriteFrames_xpemi")
-animation = &"attack"
-frame = 3
+animation = &"idle"
 
 [node name="Hurtbox" type="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2(-1, 3)

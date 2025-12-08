@@ -287,8 +287,6 @@ shape = SubResource("RectangleShape2D_5tytw")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." index="8"]
 sprite_frames = SubResource("SpriteFrames_buf8x")
-animation = &"death"
-frame = 28
-frame_progress = 1.0
+animation = &"idle"
 
 [node name="RandomMovement" parent="." index="9" instance=ExtResource("12_d05ld")]

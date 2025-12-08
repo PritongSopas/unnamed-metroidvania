@@ -12,6 +12,7 @@ func _ready() -> void:
 func take_damage(amount: int) -> void:
 	current_health -= amount
 	emit_signal("health_changed", current_health)
+	print("Damaged: ", current_health)
 
 	if current_health <= 0:
 		current_health = 0

@@ -1,15 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://bke210a0biexb"]
+[gd_scene load_steps=6 format=3 uid="uid://bke210a0biexb"]
 
 [ext_resource type="PackedScene" uid="uid://bwxw5javxdhm2" path="res://characters/base_character.tscn" id="1_rqm34"]
 [ext_resource type="Script" uid="uid://dqooesl5lkh3c" path="res://characters/player/base_player.gd" id="2_xow7y"]
 [ext_resource type="PackedScene" uid="uid://bkx6ubnvxq0xi" path="res://characters/player/Components/player_movement.tscn" id="3_xow7y"]
+[ext_resource type="PackedScene" uid="uid://csdyda1p3utns" path="res://characters/player/Components/follow_camera.tscn" id="4_rgu3j"]
+[ext_resource type="Script" uid="uid://cl215a564quuj" path="res://characters/player/Components/follow_camera.gd" id="5_j2pc8"]
 
 [node name="BasePlayer" instance=ExtResource("1_rqm34")]
 script = ExtResource("2_xow7y")
 
 [node name="PlayerMovement" parent="." index="4" instance=ExtResource("3_xow7y")]
 
-[node name="Camera2D" type="Camera2D" parent="." index="9"]
-zoom = Vector2(5, 5)
-position_smoothing_enabled = true
-rotation_smoothing_enabled = true
+[node name="FollowCamera" parent="." index="9" instance=ExtResource("4_rgu3j")]
+zoom = Vector2(1, 1)
+script = ExtResource("5_j2pc8")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ctmuf8wfhtgay"]
+
+[ext_resource type="Script" uid="uid://d2v0oosdf78sr" path="res://characters/enemy/Components/chaser_ai.gd" id="1_hil50"]
+
+[node name="ChaserAI" type="Node2D"]
+script = ExtResource("1_hil50")
