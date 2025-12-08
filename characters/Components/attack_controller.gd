@@ -6,12 +6,14 @@ signal attack_finished
 @onready var parent = get_parent()
 @onready var hitbox = parent.get_node("Hitbox")
 @onready var sprite = parent.get_node("Sprite")
+@onready var health = parent.get_node("Health")
 
 var is_attacking = false
 var hitbox_frames = {}
 
 func _ready() -> void:
 	sprite.animation_finished.connect(_on_animation_finished)
+	health.damaged.connect(_on_damaged)
 	for shape in hitbox.get_children():
 		shape.disabled = true
 		
@@ -37,7 +39,12 @@ func end_attack() -> void:
 	for shape in hitbox.get_children():
 		shape.disabled = true
 
-func _on_animation_finished() -> void:
-	if is_attacking and sprite.animation == "attack":
+func _on_animation_finished(animation_name: String) -> void:
+	if is_attacking and animation_name == "attack":
 		end_attack()
 		emit_signal("attack_finished")
+
+func _on_damaged() -> void:
+	end_attack()
+	emit_signal("attack_finished")
+	

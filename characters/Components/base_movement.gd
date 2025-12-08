@@ -6,7 +6,6 @@ extends Node
 var acceleration = 10.0
 var max_speed = 300.0
 
-
 func _physics_process(delta: float) -> void:
 	apply_gravity(delta)
 	if parent.is_knocked_back:
