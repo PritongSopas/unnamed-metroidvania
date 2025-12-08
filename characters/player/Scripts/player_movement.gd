@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var movement = get_node("BaseMovement")
 
 @export var speed = 300.0
-@export var jump_strength = -400.0
+@export var jump_strength = -600.0
 
 func _physics_process(delta: float) -> void:
 	movement.apply_gravity(delta)
