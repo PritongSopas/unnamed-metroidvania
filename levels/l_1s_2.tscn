@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://c1mrohawq3jq2"]
+[gd_scene load_steps=20 format=4 uid="uid://c1mrohawq3jq2"]
 
 [ext_resource type="Texture2D" uid="uid://cxgfa76ron7p" path="res://assets/tiles/tileset.png" id="1_riwx1"]
 [ext_resource type="Texture2D" uid="uid://l0gj2ia4r4iy" path="res://assets/tiles/Background.png" id="2_v1sxv"]
@@ -6,7 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://dxg4sm8p5ruib" path="res://assets/tiles/Tileset_12.png" id="4_ia7hi"]
 [ext_resource type="PackedScene" uid="uid://c45xwfm1pkvo2" path="res://characters/player/gato_player.tscn" id="5_sxupd"]
 [ext_resource type="PackedScene" uid="uid://c8kul3apk8hfi" path="res://characters/enemy/rat_enemy.tscn" id="6_gmlia"]
-[ext_resource type="PackedScene" path="res://characters/enemy/ant_enemy.tscn" id="7_v1sxv"]
+[ext_resource type="PackedScene" uid="uid://0qu0qt6x3s00" path="res://characters/enemy/ant_enemy.tscn" id="7_v1sxv"]
+[ext_resource type="PackedScene" uid="uid://pmcnn5f5kxjo" path="res://levels/respawn_manager.tscn" id="8_sxupd"]
+[ext_resource type="Script" uid="uid://ds3ua3xygmtrr" path="res://levels/respawn_manager.gd" id="9_gmlia"]
+[ext_resource type="PackedScene" uid="uid://drpr5vcyxd81p" path="res://levels/next_scene_point.tscn" id="10_c7mo7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5kfnk"]
 texture = ExtResource("1_riwx1")
@@ -243,6 +246,8 @@ texture = ExtResource("4_ia7hi")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_ihdcb")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_61cbu"]
+
 [node name="L1S1" type="Node2D"]
 
 [node name="Main_Platforms" type="TileMapLayer" parent="."]
@@ -286,3 +291,30 @@ position = Vector2(1704, -1576)
 
 [node name="AntEnemy2" parent="." instance=ExtResource("7_v1sxv")]
 position = Vector2(827, -1497)
+
+[node name="VoidFloor" type="StaticBody2D" parent="."]
+position = Vector2(-1, 2162)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VoidFloor"]
+position = Vector2(-5, 0)
+scale = Vector2(516.03156, 1.9619012)
+shape = SubResource("RectangleShape2D_61cbu")
+
+[node name="RespawnManager" parent="." instance=ExtResource("8_sxupd")]
+script = ExtResource("9_gmlia")
+
+[node name="Fade" type="ColorRect" parent="RespawnManager"]
+z_index = 999
+offset_left = -22499.998
+offset_top = -9572.0
+offset_right = -20499.998
+offset_bottom = -7572.0
+scale = Vector2(30.133093, 10.307431)
+color = Color(0, 0, 0, 1)
+
+[node name="NextScenePoint" parent="." instance=ExtResource("10_c7mo7")]
+position = Vector2(-2275, -1759)
+next_scene = "res://levels/l_1s_3.tscn"
+
+[node name="AntEnemy3" parent="." instance=ExtResource("7_v1sxv")]
+position = Vector2(-1912, -1831)

@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://drpr5vcyxd81p"]
+[gd_scene load_steps=3 format=3 uid="uid://drpr5vcyxd81p"]
+
+[ext_resource type="Script" uid="uid://dqbgdj2asidrd" path="res://levels/next_scene_point.gd" id="1_grbik"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b7kib"]
 
 [node name="NextScenePoint" type="Area2D"]
+script = ExtResource("1_grbik")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(16.611086, 2.9527798)

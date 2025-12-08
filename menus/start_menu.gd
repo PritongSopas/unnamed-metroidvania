@@ -5,9 +5,16 @@ extends Control
 @export var fade_time: float = 1.0
 
 func _ready() -> void:
-	fade.visible = false
+	fade.modulate.a = 1.0
+	fade.visible = true
+	var tween = create_tween()
+	tween.tween_property(fade, "modulate:a", 0.0, fade_time)
+	tween.tween_callback(Callable(self, "_hide_fade"))
 	button.pressed.connect(_on_Button_pressed)
 
+func _hide_fade() -> void:
+	fade.visible = false
+	
 func _on_Button_pressed():
 	fade.modulate.a = 0.0
 	fade.visible = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bwxw5javxdhm2"]
+[gd_scene load_steps=11 format=3 uid="uid://bwxw5javxdhm2"]
 
 [ext_resource type="PackedScene" uid="uid://drkgblh2ui1bm" path="res://characters/Components/damage_receiver.tscn" id="1_pomy3"]
 [ext_resource type="Script" uid="uid://duk4m5micpyf1" path="res://characters/base_character.gd" id="1_xt3k7"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://cq746q01c63jk" path="res://characters/Components/animation_controller.tscn" id="8_6ps22"]
 [ext_resource type="PackedScene" uid="uid://c3hw2o4xkafok" path="res://characters/Components/base_movement.tscn" id="8_cag4a"]
 [ext_resource type="Script" uid="uid://bgxfynsg3o6dk" path="res://characters/Components/hitbox.gd" id="8_dtm77"]
-[ext_resource type="PackedScene" uid="uid://bddfsahafpe7d" path="res://characters/player/Components/sfx_player.tscn" id="10_dtm77"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v625f"]
 size = Vector2(7.078125, 10)
@@ -36,5 +35,3 @@ shape = SubResource("RectangleShape2D_v625f")
 [node name="Hitbox" parent="." instance=ExtResource("6_p0tnr")]
 monitoring = false
 script = ExtResource("8_dtm77")
-
-[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("10_dtm77")]
