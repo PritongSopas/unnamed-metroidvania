@@ -157,7 +157,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("34_kux2r")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
 "speed": 30.0
 }, {
@@ -203,7 +203,7 @@ shape = SubResource("RectangleShape2D_bwpx4")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="." index="8"]
 sprite_frames = SubResource("SpriteFrames_r1587")
-animation = &"attack"
+animation = &"death"
 
 [node name="ChaserAI" parent="." index="9" instance=ExtResource("41_plqdl")]
 

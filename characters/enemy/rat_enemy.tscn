@@ -202,7 +202,6 @@ animations = [{
 }]
 
 [node name="RatEnemy" instance=ExtResource("1_kivtg")]
-scale = Vector2(1, 1)
 script = ExtResource("2_a4h2j")
 
 [node name="CollisionShape" parent="." index="2"]

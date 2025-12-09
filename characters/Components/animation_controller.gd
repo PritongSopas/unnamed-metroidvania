@@ -72,7 +72,7 @@ func _on_attack_finish() -> void:
 
 func _on_death() -> void:
 	is_dead = true
-	if sprite.sprite_frames.has_animation("hurt"):
+	if sprite.sprite_frames.has_animation("death"):
 		sprite.play("death")
 	
 func _on_hurt(current_health: int) -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bke210a0biexb"]
+[gd_scene load_steps=9 format=3 uid="uid://bke210a0biexb"]
 
 [ext_resource type="PackedScene" uid="uid://bwxw5javxdhm2" path="res://characters/base_character.tscn" id="1_rqm34"]
 [ext_resource type="Script" uid="uid://dqooesl5lkh3c" path="res://characters/player/base_player.gd" id="2_xow7y"]
@@ -6,6 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://csdyda1p3utns" path="res://characters/player/Components/follow_camera.tscn" id="4_rgu3j"]
 [ext_resource type="Script" uid="uid://cl215a564quuj" path="res://characters/player/Components/follow_camera.gd" id="5_j2pc8"]
 [ext_resource type="PackedScene" uid="uid://bddfsahafpe7d" path="res://characters/player/Components/sfx_player.tscn" id="6_j2pc8"]
+
+[sub_resource type="Gradient" id="Gradient_j2pc8"]
+offsets = PackedFloat32Array(0, 0.9066667)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2li4y"]
+gradient = SubResource("Gradient_j2pc8")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.12616822, 0.12616822)
 
 [node name="BasePlayer" instance=ExtResource("1_rqm34")]
 script = ExtResource("2_xow7y")
@@ -17,3 +27,8 @@ zoom = Vector2(1, 1)
 script = ExtResource("5_j2pc8")
 
 [node name="SfxPlayer" parent="." index="10" instance=ExtResource("6_j2pc8")]
+
+[node name="PlayerLight" type="PointLight2D" parent="." index="11"]
+energy = 0.5
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_2li4y")
