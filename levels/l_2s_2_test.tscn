@@ -1,18 +1,19 @@
-[gd_scene load_steps=20 format=4 uid="uid://c1mrohawq3jq2"]
+[gd_scene load_steps=21 format=4 uid="uid://cuh8t7hujehjr"]
 
-[ext_resource type="Texture2D" uid="uid://cxgfa76ron7p" path="res://assets/tiles/tileset.png" id="1_riwx1"]
-[ext_resource type="Texture2D" uid="uid://l0gj2ia4r4iy" path="res://assets/tiles/Background.png" id="2_v1sxv"]
-[ext_resource type="Texture2D" uid="uid://dm6s7npolmk3o" path="res://assets/tiles/Background_Light.png" id="3_2xxpc"]
-[ext_resource type="Texture2D" uid="uid://dxg4sm8p5ruib" path="res://assets/tiles/Tileset_12.png" id="4_ia7hi"]
-[ext_resource type="PackedScene" uid="uid://c45xwfm1pkvo2" path="res://characters/player/gato_player.tscn" id="5_sxupd"]
-[ext_resource type="PackedScene" uid="uid://c8kul3apk8hfi" path="res://characters/enemy/rat_enemy.tscn" id="6_gmlia"]
-[ext_resource type="PackedScene" uid="uid://0qu0qt6x3s00" path="res://characters/enemy/ant_enemy.tscn" id="7_v1sxv"]
-[ext_resource type="PackedScene" uid="uid://pmcnn5f5kxjo" path="res://levels/respawn_manager.tscn" id="8_sxupd"]
-[ext_resource type="Script" uid="uid://ds3ua3xygmtrr" path="res://levels/respawn_manager.gd" id="9_gmlia"]
-[ext_resource type="PackedScene" uid="uid://drpr5vcyxd81p" path="res://levels/next_scene_point.tscn" id="10_c7mo7"]
+[ext_resource type="Texture2D" uid="uid://cxgfa76ron7p" path="res://assets/tiles/tileset.png" id="1_qkjl2"]
+[ext_resource type="Texture2D" uid="uid://l0gj2ia4r4iy" path="res://assets/tiles/Background.png" id="2_fdyhi"]
+[ext_resource type="Texture2D" uid="uid://dm6s7npolmk3o" path="res://assets/tiles/Background_Light.png" id="3_y7r8v"]
+[ext_resource type="Texture2D" uid="uid://dxg4sm8p5ruib" path="res://assets/tiles/Tileset_12.png" id="4_by23s"]
+[ext_resource type="PackedScene" uid="uid://c45xwfm1pkvo2" path="res://characters/player/gato_player.tscn" id="5_jovql"]
+[ext_resource type="PackedScene" uid="uid://c8kul3apk8hfi" path="res://characters/enemy/rat_enemy.tscn" id="6_oh41l"]
+[ext_resource type="PackedScene" uid="uid://pmcnn5f5kxjo" path="res://levels/respawn_manager.tscn" id="7_by23s"]
+[ext_resource type="PackedScene" uid="uid://dag8c1mi8pk7h" path="res://characters/enemy/big_rat_enemy.tscn" id="7_oh41l"]
+[ext_resource type="Script" uid="uid://ds3ua3xygmtrr" path="res://levels/respawn_manager.gd" id="8_jovql"]
+[ext_resource type="PackedScene" uid="uid://drpr5vcyxd81p" path="res://levels/next_scene_point.tscn" id="9_oh41l"]
+[ext_resource type="PackedScene" uid="uid://0qu0qt6x3s00" path="res://characters/enemy/ant_enemy.tscn" id="11_ub6v3"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sxupd"]
-texture = ExtResource("1_riwx1")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5kfnk"]
+texture = ExtResource("1_qkjl2")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -85,30 +86,30 @@ texture = ExtResource("1_riwx1")
 
 [sub_resource type="TileSet" id="TileSet_xnrel"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_sxupd")
+sources/0 = SubResource("TileSetAtlasSource_5kfnk")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gmlia"]
-texture = ExtResource("2_v1sxv")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xnrel"]
+texture = ExtResource("2_fdyhi")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_ihdcb"]
-sources/0 = SubResource("TileSetAtlasSource_gmlia")
+sources/0 = SubResource("TileSetAtlasSource_xnrel")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c7mo7"]
-texture = ExtResource("3_2xxpc")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pa23s"]
+texture = ExtResource("3_y7r8v")
 0:0/0 = 0
 1:0/0 = 0
 0:1/0 = 0
 1:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_2ad3i"]
-sources/0 = SubResource("TileSetAtlasSource_c7mo7")
+sources/0 = SubResource("TileSetAtlasSource_pa23s")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_61cbu"]
-texture = ExtResource("4_ia7hi")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ihdcb"]
+texture = ExtResource("4_by23s")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -244,9 +245,9 @@ texture = ExtResource("4_ia7hi")
 
 [sub_resource type="TileSet" id="TileSet_pa23s"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_61cbu")
+sources/0 = SubResource("TileSetAtlasSource_ihdcb")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_61cbu"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ub6v3"]
 
 [node name="L1S1" type="Node2D"]
 
@@ -273,24 +274,16 @@ scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAAZAP3/AAAAAAAAAAAcAPv/AAAAAAAAAAAZAPn/AAAAAAAAAAAQAPP/AAAAAAAAAAAQAO//AAAAAAAAAAANAPH/AAAAAAAAAAAQAOv/AAAAAAAAAAANAO3/AAAAAAAAAADq//3/AAAAAAAAAADn//v/AAAAAAAAAADq//n/AAAAAAAAAADq//b/AAAAAAAAAADn//T/AAAAAAAAAADq//L/AAAAAAAAAADn//D/AAAAAAAAAADq/+7/AAAAAAAAAADn/+z/AAAAAAAAAADq/+r/AAAAAAAAAADn/+j/AAAAAAAAAAAIAAIAAAABAAAAAAAJAAIAAAABAAAAAAD8/wEAAAABAAAAAAD9/wEAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_pa23s")
 
-[node name="GatoPlayer" parent="." instance=ExtResource("5_sxupd")]
+[node name="GatoPlayer" parent="." instance=ExtResource("5_jovql")]
 position = Vector2(942, -42)
 scale = Vector2(4, 4)
 
-[node name="RatEnemy" parent="." instance=ExtResource("6_gmlia")]
-position = Vector2(-1586, -49)
+[node name="RatEnemy" parent="." instance=ExtResource("6_oh41l")]
+position = Vector2(1509, -93)
+scale = Vector2(4, 4)
 
-[node name="RatEnemy2" parent="." instance=ExtResource("6_gmlia")]
-position = Vector2(-2039, -670)
-
-[node name="RatEnemy3" parent="." instance=ExtResource("6_gmlia")]
-position = Vector2(2354, -689)
-
-[node name="AntEnemy" parent="." instance=ExtResource("7_v1sxv")]
-position = Vector2(1704, -1576)
-
-[node name="AntEnemy2" parent="." instance=ExtResource("7_v1sxv")]
-position = Vector2(827, -1497)
+[node name="BigRatEnemy" parent="." instance=ExtResource("7_oh41l")]
+position = Vector2(-2254, -716)
 
 [node name="VoidFloor" type="StaticBody2D" parent="."]
 position = Vector2(-1, 2162)
@@ -298,24 +291,26 @@ position = Vector2(-1, 2162)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="VoidFloor"]
 position = Vector2(-5, 0)
 scale = Vector2(516.03156, 1.9619012)
-shape = SubResource("RectangleShape2D_61cbu")
+shape = SubResource("RectangleShape2D_ub6v3")
 
-[node name="RespawnManager" parent="." instance=ExtResource("8_sxupd")]
-visible = false
-script = ExtResource("9_gmlia")
+[node name="RespawnManager" parent="." instance=ExtResource("7_by23s")]
+script = ExtResource("8_jovql")
 
 [node name="Fade" type="ColorRect" parent="RespawnManager"]
 z_index = 999
-offset_left = -22499.998
-offset_top = -9572.0
-offset_right = -20499.998
-offset_bottom = -7572.0
-scale = Vector2(30.133093, 10.307431)
+offset_left = -9052.0
+offset_top = -3898.0
+offset_right = -7052.0
+offset_bottom = -1898.0
+scale = Vector2(17.757938, 4.9099154)
 color = Color(0, 0, 0, 1)
 
-[node name="NextScenePoint" parent="." instance=ExtResource("10_c7mo7")]
-position = Vector2(-2275, -1759)
-next_scene = "res://levels/l_1s_3.tscn"
+[node name="NextScenePoint" parent="." instance=ExtResource("9_oh41l")]
+position = Vector2(-2254, -1783)
+next_scene = "res://menus/start_menu.tscn"
 
-[node name="AntEnemy3" parent="." instance=ExtResource("7_v1sxv")]
-position = Vector2(-1912, -1831)
+[node name="BigRatEnemy2" parent="." instance=ExtResource("7_oh41l")]
+position = Vector2(1461, -1652)
+
+[node name="AntEnemy" parent="." instance=ExtResource("11_ub6v3")]
+position = Vector2(-942, -1763)
