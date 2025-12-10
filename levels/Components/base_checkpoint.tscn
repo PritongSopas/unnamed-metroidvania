@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://chevo38wakryx"]
+
+[ext_resource type="Script" uid="uid://cs7dy85imq0fn" path="res://levels/Components/base_checkpoint.gd" id="1_wpukp"]
+
+[node name="BaseCheckpoint" type="Area2D"]
+script = ExtResource("1_wpukp")

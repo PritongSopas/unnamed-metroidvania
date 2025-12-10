@@ -5,6 +5,7 @@ class_name BaseCharacter
 @onready var animation_controller = get_node("AnimationController")
 @onready var sprite = get_node("Sprite")
 
+var is_dead = false
 var is_knocked_back = false
 var knockback_timer: float = 0.2
 
@@ -15,4 +16,25 @@ func _ready() -> void:
 
 func _on_animation_finished() -> void:
 	if sprite.animation == "death":
-		queue_free()
+		if self.is_in_group("enemies"):
+			var scene_id = get_tree().current_scene.level_id
+			if not EnemyData.killed_enemies.has(scene_id):
+				EnemyData.killed_enemies[scene_id] = []
+			EnemyData.killed_enemies[scene_id].append(self.id)
+			queue_free()
+		elif self.is_in_group("player"):
+			call_deferred("respawn")
+			is_dead = false
+			
+func respawn():
+	is_dead = false
+
+	if health:
+		health.current_health = health.max_health
+
+	velocity = Vector2.ZERO
+	is_knocked_back = false
+
+	GameState.load_last_checkpoint()
+	
+	sprite.play("idle")

@@ -4,14 +4,10 @@ extends Node
 @onready var movement = parent.get_node("BaseMovement")
 @onready var attack_controller = parent.get_node("AttackController")
 @onready var health = parent.get_node("Health")
+@onready var is_dead = parent.is_dead
 
 @export var speed_modifier = 1.0
-@export var jump_strength = -550.0
-
-var is_dead = false
-
-func _ready() -> void:
-	health.died.connect(_on_death)
+@export var jump_strength = -300.0
 	
 func _process(delta: float) -> void:
 	if is_dead: return
@@ -25,6 +21,3 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_pressed("jump"):
 		movement.jump(delta, jump_strength)
-	
-func _on_death() -> void:
-	is_dead = true

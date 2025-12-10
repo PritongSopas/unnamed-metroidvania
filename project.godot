@@ -15,6 +15,17 @@ run/main_scene="uid://c01ppm6tvusc"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SceneManager="*res://singletons/scene_manager.gd"
+GameData="*res://singletons/game_data.gd"
+EnemyData="*res://singletons/enemy_data.gd"
+GameState="*res://singletons/game_state.gd"
+
+[editor]
+
+movie_writer/movie_file="/home/snow/sample.avi"
+
 [editor_plugins]
 
 enabled=PackedStringArray()

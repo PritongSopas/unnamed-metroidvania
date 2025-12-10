@@ -4,12 +4,11 @@ extends Node
 @onready var hurtbox = parent.get_node("Hurtbox")
 
 var acceleration = 10.0
-var max_speed = 300.0
+var max_speed = 150.0
 
 var is_dashing = false
 var dash_time = 0.2
 var dash_timer = 0.0
-
 
 func _physics_process(delta: float) -> void:
 	apply_gravity(delta)

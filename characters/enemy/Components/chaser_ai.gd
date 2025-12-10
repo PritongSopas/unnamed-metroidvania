@@ -4,8 +4,6 @@ extends Node
 @onready var movement = parent.get_node("BaseMovement")
 @onready var attack_controller = parent.get_node("AttackController")
 @onready var health = parent.get_node("Health")
-@onready var player = get_tree().get_first_node_in_group("player")
-@onready var player_health = player.get_node("Health")
 @onready var is_hurt = parent.get_node("AnimationController").is_hurt
 @onready var stats = parent.get_node("EnemyStats")
 @export var detection_range = 300.0
@@ -15,22 +13,27 @@ extends Node
 @export var max_idle_interval = 2.0
 @export var move_duration = 1.0 
 
+var player: Node
+var player_health: Node
+
 var idle_timer: float = 0.0
 var move_timer: float = 0.0
 var attack_timer: float = 0.0
 var stuck_timer: float = 0.0
 var direction: int = 0
-var is_player_dead = false
 var is_dead = false
 
 func _ready() -> void:
-	player_health.died.connect(_on_player_death)
+	call_deferred("_init_player")
 	health.died.connect(_on_death)
 	_start_idle()
 	
+func _init_player() -> void:
+	player = SceneManager.player
+	
 func _physics_process(delta: float) -> void:
 	if is_dead: return
-	if not player or is_player_dead:
+	if not player:
 		random_movement(delta)
 		return
 		
@@ -82,9 +85,6 @@ func _start_idle() -> void:
 func _start_move() -> void:
 	direction = randi() % 3 - 1
 	move_timer = move_duration
-	
-func _on_player_death() -> void:
-	is_player_dead = true
 	
 func _on_death() -> void:
 	is_dead = true

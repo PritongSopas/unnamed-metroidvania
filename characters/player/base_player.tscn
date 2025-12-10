@@ -23,7 +23,7 @@ script = ExtResource("2_xow7y")
 [node name="PlayerMovement" parent="." index="4" instance=ExtResource("3_xow7y")]
 
 [node name="FollowCamera" parent="." index="9" instance=ExtResource("4_rgu3j")]
-zoom = Vector2(1, 1)
+zoom = Vector2(4, 4)
 script = ExtResource("5_j2pc8")
 
 [node name="SfxPlayer" parent="." index="10" instance=ExtResource("6_j2pc8")]

@@ -7,8 +7,9 @@ extends Node
 @onready var hurtbox = parent.get_node("Hurtbox")
 @onready var health = parent.get_node("Health")
 
+@onready var is_dead = parent.is_dead
+
 var is_attacking = false
-var is_dead = false
 var is_hurt = false
 
 var attack_timer: float = 0.0
@@ -71,7 +72,6 @@ func _on_attack_finish() -> void:
 	is_attacking = false
 
 func _on_death() -> void:
-	is_dead = true
 	if sprite.sprite_frames.has_animation("death"):
 		sprite.play("death")
 	
