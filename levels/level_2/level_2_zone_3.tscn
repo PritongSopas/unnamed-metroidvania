@@ -351,7 +351,7 @@ enemy_scene = ExtResource("7_evcem")
 enemy_id = "brat_6"
 
 [node name="Center_Light_1" type="PointLight2D" parent="." index="9"]
-position = Vector2(-5.000001, -425.00006)
-scale = Vector2(3.265625, 24.582338)
+position = Vector2(12, -69.000015)
+scale = Vector2(3.265625, 33.783203)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_fsc76")
