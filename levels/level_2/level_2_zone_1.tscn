@@ -282,7 +282,7 @@ texture = ExtResource("5_ak8wv")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_db8ut")
 
-[node name="BaseLevel" instance=ExtResource("1_0jnso")]
+[node name="Level2Zone1" instance=ExtResource("1_0jnso")]
 
 [node name="Main_Platforms" type="TileMapLayer" parent="TileMapLayers" index="0"]
 z_index = 2
