@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://b26pw7j7jjhi2"]
+[gd_scene load_steps=42 format=4 uid="uid://b26pw7j7jjhi2"]
 
 [ext_resource type="PackedScene" uid="uid://by0ro8ivgc6rq" path="res://levels/base_level.tscn" id="1_ddb3q"]
 [ext_resource type="Texture2D" uid="uid://cxgfa76ron7p" path="res://assets/tiles/tileset.png" id="2_8r2vk"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ce0md0w40p3si" path="res://assets/sprites/Vines_normal.png" id="7_aqktx"]
 [ext_resource type="Texture2D" uid="uid://dxg4sm8p5ruib" path="res://assets/tiles/Tileset_12.png" id="8_eomx6"]
 [ext_resource type="PackedScene" uid="uid://1otvbiypttf5" path="res://levels/Components/base_enemy_spawn.tscn" id="9_umewa"]
+[ext_resource type="Texture2D" uid="uid://cy4y4iisjxun6" path="res://assets/sprites/bridge-tiles.png" id="10_aqktx"]
 [ext_resource type="PackedScene" uid="uid://c4dk4sjeucu2u" path="res://characters/enemy/snail_enemy.tscn" id="10_bpdf2"]
 [ext_resource type="PackedScene" uid="uid://c8kul3apk8hfi" path="res://characters/enemy/rat_enemy.tscn" id="11_bpdf2"]
 [ext_resource type="PackedScene" uid="uid://cahf6nb24vf4f" path="res://levels/Components/kill_zone.tscn" id="12_koc2w"]
@@ -429,6 +430,53 @@ texture = ExtResource("8_eomx6")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0tjny")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eomx6"]
+texture = ExtResource("10_aqktx")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_e2thi"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_eomx6")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bpdf2"]
 size = Vector2(42, 34)
 
@@ -450,7 +498,7 @@ entrance_id = "center_hole"
 
 [node name="DefaultExit" parent="Exits" index="0"]
 position = Vector2(-104, -336)
-target_scene = "uid://k0c6qkar1gf4"
+target_scene = "uid://dlbcelt4vpdef"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exits/DefaultExit" index="0"]
 shape = SubResource("RectangleShape2D_aqktx")
@@ -479,6 +527,10 @@ tile_set = SubResource("TileSet_2nxhm")
 scale = Vector2(0.75, 0.75)
 tile_map_data = PackedByteArray("AAD7//L/BwAAAAAAAAD7//P/BwAAAAEAAAD7//T/BwAAAAIAAAD7//X/BwAAAAMAAAAFAPH/BwAAAAAAAAAFAPL/BwAAAAEAAAAFAPP/BwAAAAIAAAAFAPT/BwAAAAMAAAD6//L/BwAAAAEAAAD6//P/BwAAAAIAAAD6//T/BwAAAAMAAAD8//L/BwAAAAIAAAD8//P/BwAAAAMAAAD5//D/BwAAAAEAAAD5//H/BwAAAAIAAAD5//L/BwAAAAMAAAAEAPH/BwAAAAEAAAAEAPL/BwAAAAIAAAAEAPP/BwAAAAMAAAAGAPL/BwAAAAEAAAAGAPP/BwAAAAIAAAAGAPT/BwAAAAMAAAA=")
 tile_set = SubResource("TileSet_2nxhm")
+
+[node name="Bridge_Tiles" type="TileMapLayer" parent="TileMapLayers" index="5"]
+tile_map_data = PackedByteArray("AAD+//n/AAAAAAAAAAD+//r/AAAAAAEAAAD+//v/AAAAAAIAAAACAPn/AAACAAMAAAACAPr/AAACAAQAAAACAPv/AAACAAUAAAABAPn/AAABAAMAAAABAPr/AAABAAQAAAD///n/AAABAAAAAAD///r/AAABAAEAAAAAAPn/AAACAAAAAAAAAPr/AAACAAEAAAA=")
+tile_set = SubResource("TileSet_e2thi")
 
 [node name="Snail1" parent="EnemySpawns" index="0" instance=ExtResource("9_umewa")]
 position = Vector2(200, -16)
