@@ -483,11 +483,11 @@ size = Vector2(42, 34)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g1eba"]
 size = Vector2(66, 18)
 
-[sub_resource type="Gradient" id="Gradient_j6ieb"]
+[sub_resource type="Gradient" id="Gradient_aqktx"]
 offsets = PackedFloat32Array(0, 0.39285713)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_aqktx"]
-gradient = SubResource("Gradient_j6ieb")
+gradient = SubResource("Gradient_aqktx")
 
 [node name="Level1Zone1" instance=ExtResource("1_ddb3q")]
 position = Vector2(-46, -11)
@@ -568,7 +568,7 @@ position = Vector2(-1, 31)
 shape = SubResource("RectangleShape2D_g1eba")
 
 [node name="Center_Light" type="PointLight2D" parent="." index="10"]
-position = Vector2(-4.500004, 1.5258789e-05)
-scale = Vector2(1.7968749, 18.437502)
+position = Vector2(-2.9999983, -227)
+scale = Vector2(3.265625, 28.509768)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_aqktx")
