@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cuokeojrksoov"]
+
+[ext_resource type="Script" uid="uid://ble1du1tvexvm" path="res://characters/npc/base_interactable_npc.gd" id="1_phx0d"]
+
+[node name="BaseInteractableNPC" type="Node2D"]
+script = ExtResource("1_phx0d")

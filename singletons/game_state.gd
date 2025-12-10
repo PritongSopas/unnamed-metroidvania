@@ -11,7 +11,6 @@ var killed_enemies_snapshot: Dictionary = {}
 var flags_snapshot: Dictionary = {}
 
 var selected_character: PackedScene = null
-var player_souls: int = 0
 
 func _ready() -> void:
 	requirements_changed.connect(_on_requirements_changed)

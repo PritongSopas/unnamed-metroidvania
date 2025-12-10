@@ -1,7 +1,15 @@
 extends Node
 
+signal interaction_started
+signal interaction_ended
+
+@onready var fade_layer = get_tree().current_scene.get_node("FadeLayer")
+@onready var dialogue_box = get_tree().current_scene.get_node("DialogueBox")
+
 var player: Node = null
 var zone: Node = null
+
+var is_busy = false
 
 func register_player(p):
 	player = p
@@ -32,7 +40,6 @@ func change_scene_to(scene_path: String, entrance_id: String):
 	call_deferred("_change_scene_deferred", scene_path, entrance_id)
 
 func _change_scene_deferred(scene_path: String, entrance_id: String):
-	var fade_layer = get_tree().current_scene.get_node("FadeLayer")
 	if fade_layer:
 		await fade_layer.fade_out(1)
 		
@@ -42,9 +49,11 @@ func _change_scene_deferred(scene_path: String, entrance_id: String):
 	zone = new_zone
 
 	for child in current_zone.get_children():
-		child.queue_free
+		child.queue_free()
 
 	current_zone.add_child(new_zone)
+	
+	player.get_node("FollowCamera").set_camera_limits(new_zone)
 
 	var spawn_point = new_zone.get_entrance(entrance_id)
 	if spawn_point and player:
@@ -53,3 +62,10 @@ func _change_scene_deferred(scene_path: String, entrance_id: String):
 		
 	if fade_layer:
 		await fade_layer.fade_in(1)
+
+func show_dialogue(lines: Array) -> void:
+	is_busy = true
+	emit_signal("interaction_started")
+	dialogue_box.show_dialogue(lines)
+	emit_signal("interaction_ended")
+	is_busy = false

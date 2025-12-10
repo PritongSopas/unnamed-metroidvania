@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://on3b51plb7pk"]
+
+[ext_resource type="Script" uid="uid://c8eu20mf30vbh" path="res://ui/dialogue/dialogue_module.gd" id="1_me0ie"]
+[ext_resource type="Texture2D" uid="uid://0of3yc1ymgeq" path="res://assets/sprites/ui_sheet.png" id="2_8pxio"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pxio"]
+
+[node name="DialogueModule" type="Area2D"]
+script = ExtResource("1_me0ie")
+
+[node name="Range" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8pxio")
+
+[node name="DialogueSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_8pxio")
+region_enabled = true
+region_rect = Rect2(256, 96, 48, 48)
