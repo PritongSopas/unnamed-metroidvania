@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=4 uid="uid://wid58gdb7ao3"]
+[gd_scene load_steps=14 format=4 uid="uid://wid58gdb7ao3"]
 
 [ext_resource type="PackedScene" uid="uid://by0ro8ivgc6rq" path="res://levels/base_level.tscn" id="1_0jnso"]
 [ext_resource type="Texture2D" uid="uid://cxgfa76ron7p" path="res://assets/tiles/tileset.png" id="2_ak8wv"]
 [ext_resource type="Texture2D" uid="uid://l0gj2ia4r4iy" path="res://assets/tiles/Background.png" id="3_db8ut"]
 [ext_resource type="Texture2D" uid="uid://dxg4sm8p5ruib" path="res://assets/tiles/Tileset_12.png" id="4_vnhcb"]
+[ext_resource type="Texture2D" uid="uid://cy4y4iisjxun6" path="res://assets/sprites/bridge-tiles.png" id="5_ak8wv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j3kns"]
 texture = ExtResource("2_ak8wv")
@@ -230,6 +231,53 @@ texture = ExtResource("4_vnhcb")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_mpqe6")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_db8ut"]
+texture = ExtResource("5_ak8wv")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_vnhcb"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_db8ut")
+
 [node name="BaseLevel" instance=ExtResource("1_0jnso")]
 
 [node name="Main_Platforms" type="TileMapLayer" parent="TileMapLayers" index="0"]
@@ -246,3 +294,7 @@ z_index = 2
 position = Vector2(192, -85)
 tile_map_data = PackedByteArray("AADX/wEAAAAAAAAAAADU////AAAAAAAAAADX//3/AAAAAAAAAADU//v/AAAAAAAAAADZ//f/AAAAAAAAAADc//X/AAABAAAAAADd//X/AAABAAAAAADZ//P/AAAAAAAAAADg//P/AAAAAAAAAADX/+3/AAAAAAAAAADU/+v/AAAAAAAAAADX/+n/AAAAAAAAAADU/+f/AAAAAAAAAAAQAAAAAAAAAAAAAAANAP7/AAAAAAAAAAAQAPz/AAAAAAAAAAD9//b/AAAAAAAAAAD6//T/AAAAAAAAAAD9//L/AAAAAAAAAAD6//D/AAAAAAAAAAAAAO7/AAAAAAAAAAACAOz/AAADAAAAAAADAOz/AAABAAAAAAAEAOz/AAABAAAAAAAFAOz/AAADAAAAAAAQAO7/AAAAAAAAAAANAOz/AAAAAAAAAAAQAOr/AAAAAAAAAAANAOj/AAAAAAAAAAAQAOb/AAAAAAAAAAABAOH/AAAAAAAAAAD+/9//AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_stl7u")
+
+[node name="Bridge_Tiles" type="TileMapLayer" parent="TileMapLayers" index="3"]
+tile_map_data = PackedByteArray("AAD+/wAAAAABAAAAAAD+/wEAAAABAAEAAAABAAAAAAABAAMAAAABAAEAAAABAAQAAAD//wAAAAACAAAAAAD//wEAAAACAAEAAAAAAAAAAAAAAAMAAAAAAAEAAAAAAAQAAAA=")
+tile_set = SubResource("TileSet_vnhcb")
