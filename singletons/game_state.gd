@@ -27,7 +27,7 @@ func load_last_checkpoint():
 
 	var fade_layer = get_tree().current_scene.get_node("FadeLayer")
 	if fade_layer:
-		await fade_layer.fade_out(1)
+		await fade_layer.fade_out(0.5)
 
 	EnemyData.killed_enemies.clear()
 	for scene_id in killed_enemies_snapshot.keys():
