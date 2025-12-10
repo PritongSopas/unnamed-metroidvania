@@ -41,15 +41,15 @@ func _change_scene_deferred(scene_path: String, entrance_id: String):
 	var new_zone = load(scene_path).instantiate()
 	zone = new_zone
 
-	var old_zone = current_zone.get_child(0)
-	if old_zone:
-		old_zone.queue_free()
+	for child in current_zone.get_children():
+		child.queue_free
 
 	current_zone.add_child(new_zone)
 
 	var spawn_point = new_zone.get_entrance(entrance_id)
 	if spawn_point and player:
 		player.global_position = spawn_point.global_position
+		player.velocity = Vector2.ZERO
 		
 	if fade_layer:
 		await fade_layer.fade_in(1)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://b26pw7j7jjhi2"]
+[gd_scene load_steps=41 format=4 uid="uid://b26pw7j7jjhi2"]
 
 [ext_resource type="PackedScene" uid="uid://by0ro8ivgc6rq" path="res://levels/base_level.tscn" id="1_ddb3q"]
 [ext_resource type="Texture2D" uid="uid://cxgfa76ron7p" path="res://assets/tiles/tileset.png" id="2_8r2vk"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://c4dk4sjeucu2u" path="res://characters/enemy/snail_enemy.tscn" id="10_bpdf2"]
 [ext_resource type="PackedScene" uid="uid://c8kul3apk8hfi" path="res://characters/enemy/rat_enemy.tscn" id="11_bpdf2"]
 [ext_resource type="PackedScene" uid="uid://cahf6nb24vf4f" path="res://levels/Components/kill_zone.tscn" id="12_koc2w"]
+[ext_resource type="PackedScene" uid="uid://cl3d8h1dqfcxd" path="res://levels/requirements/base_requirement_spawn.tscn" id="14_eomx6"]
+[ext_resource type="PackedScene" uid="uid://by8cqlb4w4r7x" path="res://levels/requirements/berry_bush.tscn" id="15_eomx6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aqktx"]
 
@@ -502,3 +504,8 @@ shape = SubResource("RectangleShape2D_bpdf2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone" index="0"]
 position = Vector2(-1, 31)
 shape = SubResource("RectangleShape2D_g1eba")
+
+[node name="Key1" parent="Requirements" index="0" instance=ExtResource("14_eomx6")]
+position = Vector2(120, -128)
+requirement_scene = ExtResource("15_eomx6")
+flag_id = "berry_1"

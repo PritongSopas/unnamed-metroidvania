@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://by0ro8ivgc6rq"]
+[gd_scene load_steps=10 format=3 uid="uid://by0ro8ivgc6rq"]
 
 [ext_resource type="Script" uid="uid://btd3kvq4lvsyl" path="res://levels/base_level.gd" id="1_63c5o"]
 [ext_resource type="PackedScene" uid="uid://dnq2tku4mja83" path="res://levels/Components/fade_layer.tscn" id="2_p5284"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://bl1s47hnv2gd3" path="res://levels/Components/enemy_manager.tscn" id="5_maq6b"]
 [ext_resource type="Script" uid="uid://cy7auph6k8y2d" path="res://levels/Components/enemy_manager.gd" id="6_0rg8l"]
 [ext_resource type="PackedScene" uid="uid://chevo38wakryx" path="res://levels/Components/base_checkpoint.tscn" id="7_maq6b"]
+[ext_resource type="PackedScene" uid="uid://dhf8e1r3o5jym" path="res://levels/Components/requirements_manager.tscn" id="8_6w4ab"]
+[ext_resource type="Script" uid="uid://88wxewuwg6ks" path="res://levels/Components/requirements_manager.gd" id="9_n8wy4"]
 
 [node name="BaseLevel" type="Node2D"]
 script = ExtResource("1_63c5o")
@@ -31,3 +33,8 @@ script = ExtResource("6_0rg8l")
 [node name="Checkpoints" type="Node2D" parent="."]
 
 [node name="DefaultCheckpoint" parent="Checkpoints" instance=ExtResource("7_maq6b")]
+
+[node name="RequirementsManager" parent="." instance=ExtResource("8_6w4ab")]
+script = ExtResource("9_n8wy4")
+
+[node name="Requirements" type="Node2D" parent="."]
