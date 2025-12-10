@@ -498,7 +498,7 @@ entrance_id = "center_hole"
 
 [node name="DefaultExit" parent="Exits" index="0"]
 position = Vector2(-104, -336)
-target_scene = "uid://k0c6qkar1gf4"
+target_scene = "uid://dlbcelt4vpdef"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exits/DefaultExit" index="0"]
 shape = SubResource("RectangleShape2D_aqktx")

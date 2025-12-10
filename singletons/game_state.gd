@@ -1,16 +1,22 @@
 extends Node
 
+signal requirements_changed
+
 var checkpoint_id: String = ""
 var checkpoint_position: Vector2
 
 var triggered_checkpoints: Array = []
 
 var killed_enemies_snapshot: Dictionary = {}
+var flags_snapshot: Dictionary = {}
 
 var selected_character: PackedScene = null
 var player_souls: int = 0
 
-func save_checkpoint(id: String, pos: Vector2):
+func _ready() -> void:
+	requirements_changed.connect(_on_requirements_changed)
+
+func save_checkpoint(id: String, pos: Vector2) -> void:
 	checkpoint_id = id
 	checkpoint_position = pos
 
@@ -20,7 +26,7 @@ func save_checkpoint(id: String, pos: Vector2):
 		
 	triggered_checkpoints.append(id)
 
-func load_last_checkpoint():
+func load_last_checkpoint() -> void:
 	var player = SceneManager.player
 	if not player:
 		return
@@ -44,3 +50,6 @@ func load_last_checkpoint():
 
 	if fade_layer:
 		await fade_layer.fade_in(1)
+
+func _on_requirements_changed() -> void:
+	print(FlagData.flags)

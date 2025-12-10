@@ -17,7 +17,7 @@ func _ready() -> void:
 func _on_animation_finished() -> void:
 	if sprite.animation == "death":
 		if self.is_in_group("enemies"):
-			var scene_id = get_tree().current_scene.level_id
+			var scene_id = SceneManager.zone.level_id
 			if not EnemyData.killed_enemies.has(scene_id):
 				EnemyData.killed_enemies[scene_id] = []
 			EnemyData.killed_enemies[scene_id].append(self.id)
