@@ -1,10 +1,13 @@
-[gd_scene load_steps=14 format=4 uid="uid://1scmanx1fj02"]
+[gd_scene load_steps=17 format=4 uid="uid://1scmanx1fj02"]
 
 [ext_resource type="PackedScene" uid="uid://by0ro8ivgc6rq" path="res://levels/base_level.tscn" id="1_5b4im"]
 [ext_resource type="Texture2D" uid="uid://cxgfa76ron7p" path="res://assets/tiles/tileset.png" id="2_7u1hf"]
 [ext_resource type="Texture2D" uid="uid://l0gj2ia4r4iy" path="res://assets/tiles/Background.png" id="3_v0o6f"]
 [ext_resource type="Texture2D" uid="uid://dxg4sm8p5ruib" path="res://assets/tiles/Tileset_12.png" id="4_1l60e"]
 [ext_resource type="Texture2D" uid="uid://cy4y4iisjxun6" path="res://assets/sprites/bridge-tiles.png" id="5_7u1hf"]
+[ext_resource type="PackedScene" uid="uid://1otvbiypttf5" path="res://levels/Components/base_enemy_spawn.tscn" id="6_fxxf1"]
+[ext_resource type="PackedScene" uid="uid://0qu0qt6x3s00" path="res://characters/enemy/ant_enemy.tscn" id="7_dteh4"]
+[ext_resource type="PackedScene" uid="uid://c8kul3apk8hfi" path="res://characters/enemy/rat_enemy.tscn" id="8_xtbiy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fxxf1"]
 texture = ExtResource("2_7u1hf")
@@ -298,3 +301,18 @@ tile_set = SubResource("TileSet_0lxh3")
 [node name="Bridge_Tiles" type="TileMapLayer" parent="TileMapLayers" index="3"]
 tile_map_data = PackedByteArray("AAD+/+z/AAACAAAAAAD+/+3/AAACAAEAAAABAOz/AAADAAMAAAD//+z/AAADAAAAAAAAAOz/AAAEAAMAAAA=")
 tile_set = SubResource("TileSet_1l60e")
+
+[node name="Ant1" parent="EnemySpawns" index="0" instance=ExtResource("6_fxxf1")]
+position = Vector2(-200, -18)
+enemy_scene = ExtResource("7_dteh4")
+enemy_id = "ant_1"
+
+[node name="Rat1" parent="EnemySpawns" index="1" instance=ExtResource("6_fxxf1")]
+position = Vector2(136, -330)
+enemy_scene = ExtResource("8_xtbiy")
+enemy_id = "rat_1"
+
+[node name="Rat2" parent="EnemySpawns" index="2" instance=ExtResource("6_fxxf1")]
+position = Vector2(-198, -331)
+enemy_scene = ExtResource("8_xtbiy")
+enemy_id = "rat_2"

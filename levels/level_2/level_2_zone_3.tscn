@@ -1,10 +1,12 @@
-[gd_scene load_steps=14 format=4 uid="uid://bi1m0otppgtyj"]
+[gd_scene load_steps=16 format=4 uid="uid://bi1m0otppgtyj"]
 
 [ext_resource type="PackedScene" uid="uid://by0ro8ivgc6rq" path="res://levels/base_level.tscn" id="1_olx6c"]
 [ext_resource type="Texture2D" uid="uid://cxgfa76ron7p" path="res://assets/tiles/tileset.png" id="2_0s7og"]
 [ext_resource type="Texture2D" uid="uid://l0gj2ia4r4iy" path="res://assets/tiles/Background.png" id="3_fv0u1"]
 [ext_resource type="Texture2D" uid="uid://dxg4sm8p5ruib" path="res://assets/tiles/Tileset_12.png" id="4_evcem"]
 [ext_resource type="Texture2D" uid="uid://cy4y4iisjxun6" path="res://assets/sprites/bridge-tiles.png" id="5_fsc76"]
+[ext_resource type="PackedScene" uid="uid://1otvbiypttf5" path="res://levels/Components/base_enemy_spawn.tscn" id="6_fv0u1"]
+[ext_resource type="PackedScene" uid="uid://dag8c1mi8pk7h" path="res://characters/enemy/big_rat_enemy.tscn" id="7_evcem"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qmvtg"]
 texture = ExtResource("2_0s7og")
@@ -298,3 +300,33 @@ tile_set = SubResource("TileSet_2of6v")
 [node name="Bridge_Tiles" type="TileMapLayer" parent="TileMapLayers" index="3"]
 tile_map_data = PackedByteArray("AAABAAAAAAADAAMAAAAAAAAAAAAFAAMAAAD+/wAAAAADAAAAAAD//wAAAAAEAAAAAAD+//b/AAAAAAAAAAD+//f/AAAAAAEAAAD+//j/AAAAAAIAAAABAPb/AAACAAMAAAABAPf/AAACAAQAAAABAPj/AAACAAUAAAD///b/AAABAAAAAAD///f/AAABAAEAAAAAAPb/AAABAAMAAAAAAPf/AAABAAQAAAD+/+z/AAACAAAAAAD+/+3/AAACAAEAAAABAOz/AAAAAAMAAAABAO3/AAAAAAQAAAD//+z/AAACAAAAAAD//+3/AAACAAEAAAAAAOz/AAADAAMAAAA=")
 tile_set = SubResource("TileSet_7xjay")
+
+[node name="BigRat1" parent="EnemySpawns" index="0" instance=ExtResource("6_fv0u1")]
+position = Vector2(191, -22)
+enemy_scene = ExtResource("7_evcem")
+enemy_id = "brat_1"
+
+[node name="BigRat2" parent="EnemySpawns" index="1" instance=ExtResource("6_fv0u1")]
+position = Vector2(-345, -22)
+enemy_scene = ExtResource("7_evcem")
+enemy_id = "brat_2"
+
+[node name="BigRat3" parent="EnemySpawns" index="2" instance=ExtResource("6_fv0u1")]
+position = Vector2(-207, -176)
+enemy_scene = ExtResource("7_evcem")
+enemy_id = "brat_3"
+
+[node name="BigRat4" parent="EnemySpawns" index="3" instance=ExtResource("6_fv0u1")]
+position = Vector2(210, -173)
+enemy_scene = ExtResource("7_evcem")
+enemy_id = "brat_4"
+
+[node name="BigRat5" parent="EnemySpawns" index="4" instance=ExtResource("6_fv0u1")]
+position = Vector2(-459, -335)
+enemy_scene = ExtResource("7_evcem")
+enemy_id = "brat_5"
+
+[node name="BigRat6" parent="EnemySpawns" index="5" instance=ExtResource("6_fv0u1")]
+position = Vector2(201, -339)
+enemy_scene = ExtResource("7_evcem")
+enemy_id = "brat_6"

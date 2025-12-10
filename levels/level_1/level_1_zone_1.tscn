@@ -542,6 +542,11 @@ position = Vector2(-320, -136)
 enemy_scene = ExtResource("11_bpdf2")
 enemy_id = "rat_1"
 
+[node name="Rat2" parent="EnemySpawns" index="2" instance=ExtResource("9_umewa")]
+position = Vector2(-167, -237)
+enemy_scene = ExtResource("11_bpdf2")
+enemy_id = "rat_2"
+
 [node name="DefaultCheckpoint" parent="Checkpoints" index="0"]
 position = Vector2(40, -32)
 
