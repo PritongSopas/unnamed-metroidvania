@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://d2yllsrv0d86g"]
+[gd_scene load_steps=14 format=4 uid="uid://c1mrohawq3jq2"]
 
 [ext_resource type="Texture2D" uid="uid://cxgfa76ron7p" path="res://assets/tiles/tileset.png" id="1_riwx1"]
 [ext_resource type="Texture2D" uid="uid://l0gj2ia4r4iy" path="res://assets/tiles/Background.png" id="2_v1sxv"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dxg4sm8p5ruib" path="res://assets/tiles/Tileset_12.png" id="4_ia7hi"]
 [ext_resource type="PackedScene" uid="uid://c45xwfm1pkvo2" path="res://characters/player/gato_player.tscn" id="5_sxupd"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5kfnk"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dqcig"]
 texture = ExtResource("1_riwx1")
 0:0/0 = 0
 1:0/0 = 0
@@ -80,9 +80,9 @@ texture = ExtResource("1_riwx1")
 
 [sub_resource type="TileSet" id="TileSet_xnrel"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_5kfnk")
+sources/0 = SubResource("TileSetAtlasSource_dqcig")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xnrel"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_riwx1"]
 texture = ExtResource("2_v1sxv")
 0:0/0 = 0
 1:0/0 = 0
@@ -90,9 +90,9 @@ texture = ExtResource("2_v1sxv")
 1:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_ihdcb"]
-sources/0 = SubResource("TileSetAtlasSource_xnrel")
+sources/0 = SubResource("TileSetAtlasSource_riwx1")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pa23s"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1sxv"]
 texture = ExtResource("3_2xxpc")
 0:0/0 = 0
 1:0/0 = 0
@@ -100,9 +100,9 @@ texture = ExtResource("3_2xxpc")
 1:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_2ad3i"]
-sources/0 = SubResource("TileSetAtlasSource_pa23s")
+sources/0 = SubResource("TileSetAtlasSource_v1sxv")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ihdcb"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2xxpc"]
 texture = ExtResource("4_ia7hi")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -239,7 +239,7 @@ texture = ExtResource("4_ia7hi")
 
 [sub_resource type="TileSet" id="TileSet_pa23s"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_ihdcb")
+sources/0 = SubResource("TileSetAtlasSource_2xxpc")
 
 [node name="L1S1" type="Node2D"]
 
