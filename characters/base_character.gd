@@ -5,6 +5,8 @@ class_name BaseCharacter
 @onready var animation_controller = get_node("AnimationController")
 @onready var sprite = get_node("Sprite")
 
+@export var max_health: int = 50
+
 var is_dead = false
 var is_knocked_back = false
 var knockback_timer: float = 0.2

@@ -450,13 +450,23 @@ position = Vector2(-200, -18)
 enemy_scene = ExtResource("7_dteh4")
 enemy_id = "ant_1"
 
-[node name="Rat1" parent="EnemySpawns" index="1" instance=ExtResource("6_fxxf1")]
+[node name="Ant2" parent="EnemySpawns" index="1" instance=ExtResource("6_fxxf1")]
+position = Vector2(225, -335)
+enemy_scene = ExtResource("7_dteh4")
+enemy_id = "ant_2"
+
+[node name="Ant3" parent="EnemySpawns" index="2" instance=ExtResource("6_fxxf1")]
+position = Vector2(272, -26)
+enemy_scene = ExtResource("7_dteh4")
+enemy_id = "ant_3"
+
+[node name="Rat1" parent="EnemySpawns" index="3" instance=ExtResource("6_fxxf1")]
 position = Vector2(136, -330)
 enemy_scene = ExtResource("8_xtbiy")
 enemy_id = "rat_1"
 
-[node name="Rat2" parent="EnemySpawns" index="2" instance=ExtResource("6_fxxf1")]
-position = Vector2(-198, -331)
+[node name="Rat2" parent="EnemySpawns" index="4" instance=ExtResource("6_fxxf1")]
+position = Vector2(-462, -131)
 enemy_scene = ExtResource("8_xtbiy")
 enemy_id = "rat_2"
 

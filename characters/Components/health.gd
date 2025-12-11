@@ -5,8 +5,8 @@ signal healed(current_health)
 signal died
 
 @onready var is_dead = get_parent().is_dead
+@onready var max_health = get_parent().max_health
 
-@export var max_health: int = 67
 var current_health: int
 
 func _ready() -> void:

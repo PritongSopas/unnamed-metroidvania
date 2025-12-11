@@ -293,6 +293,11 @@ position = Vector2(-181, -370)
 enemy_scene = ExtResource("8_q5uw4")
 enemy_id = "ant_2"
 
+[node name="Ant3" parent="EnemySpawns" index="4" instance=ExtResource("6_j6ieb")]
+position = Vector2(-781, -359)
+enemy_scene = ExtResource("8_q5uw4")
+enemy_id = "ant_3"
+
 [node name="Checkpoints" parent="." index="5"]
 position = Vector2(-179, -14)
 

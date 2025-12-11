@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://bnk4uo7m140wp"]
+
+[ext_resource type="Texture2D" uid="uid://bxjeuxfkeo26u" path="res://characters/enemy/snail_sprites/run/0.png" id="1_x3mdc"]
+[ext_resource type="Script" uid="uid://bkcf6lcsp4pl0" path="res://levels/objectives/boulder.gd" id="1_xq23c"]
+[ext_resource type="FontFile" uid="uid://dlgjna8dltq4i" path="res://assets/fonts/PixelatedEleganceRegular-ovyAA.ttf" id="2_xq23c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f0udf"]
+size = Vector2(242, 147)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jshmr"]
+size = Vector2(126, 121)
+
+[node name="Boulder" type="Area2D"]
+script = ExtResource("1_xq23c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -6.5)
+shape = SubResource("RectangleShape2D_f0udf")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+modulate = Color(0.6922602, 0.35733244, 0.39644837, 1)
+scale = Vector2(14.019475, 15.13849)
+texture = ExtResource("1_x3mdc")
+region_enabled = true
+region_rect = Rect2(0, 5, 9, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_jshmr")
+
+[node name="Hint" type="Label" parent="."]
+offset_left = -10.0
+offset_top = -21.0
+offset_right = 72.0
+offset_bottom = 8.0
+scale = Vector2(0.25, 0.25)
+theme_override_fonts/font = ExtResource("2_xq23c")
+theme_override_font_sizes/font_size = 32
+text = "E/X"
+metadata/_edit_use_anchors_ = true

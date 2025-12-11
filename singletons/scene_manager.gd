@@ -64,6 +64,9 @@ func _change_scene_deferred(scene_path: String, entrance_id: String):
 		
 	await fade_layer.fade_in(0.5)
 
+	FlagData.flags[new_zone.name] = true
+	GameState.emit_signal("requirements_changed")
+
 func show_dialogue(lines: Array) -> void:
 	freeze = true
 	emit_signal("interaction_started")
@@ -73,3 +76,13 @@ func show_dialogue(lines: Array) -> void:
 	
 	emit_signal("interaction_ended")
 	freeze = false
+	
+func end_game() -> void:
+	await fade_layer.fade_in(0.5)
+	var end_scene = preload("res://menus/end_menu.tscn").instantiate()
+	
+	var game_scene = get_tree().current_scene
+	game_scene.queue_free()
+
+	get_tree().root.add_child(end_scene)
+	get_tree().current_scene = end_scene
