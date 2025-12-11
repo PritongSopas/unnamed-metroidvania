@@ -1,0 +1,75 @@
+[gd_scene load_steps=7 format=3 uid="uid://b54imx0udmgob"]
+
+[ext_resource type="Texture2D" uid="uid://damhsi1ibbyfw" path="res://assets/sprites/stairs_part4.png" id="1_04f6m"]
+[ext_resource type="Script" uid="uid://bw31kg2sm0bmu" path="res://levels/objectives/climbable_ladder.gd" id="1_fxsyw"]
+[ext_resource type="Texture2D" uid="uid://dn2hmpanmg67b" path="res://assets/sprites/stairs_part1.png" id="2_y1ap5"]
+[ext_resource type="FontFile" uid="uid://dlgjna8dltq4i" path="res://assets/fonts/PixelatedEleganceRegular-ovyAA.ttf" id="3_y1ap5"]
+[ext_resource type="Texture2D" uid="uid://ch4g2wjn6hx5t" path="res://assets/sprites/stairs_full.png" id="5_gpubg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fxsyw"]
+size = Vector2(64, 58)
+
+[node name="Ladder" type="Area2D"]
+script = ExtResource("1_fxsyw")
+
+[node name="StairsPart4" type="Sprite2D" parent="."]
+modulate = Color(0.69751346, 0.6645552, 0.29876998, 1)
+position = Vector2(0, -8)
+texture = ExtResource("1_04f6m")
+
+[node name="StairsPart1" type="Sprite2D" parent="."]
+modulate = Color(0.69751346, 0.6645552, 0.29876998, 1)
+position = Vector2(0, -40)
+texture = ExtResource("2_y1ap5")
+
+[node name="StairsPart2" type="Sprite2D" parent="."]
+modulate = Color(0.69751346, 0.6645552, 0.29876998, 1)
+position = Vector2(0, -88)
+texture = ExtResource("2_y1ap5")
+
+[node name="StairsPart3" type="Sprite2D" parent="."]
+modulate = Color(0.69751346, 0.6645552, 0.29876998, 1)
+position = Vector2(0, -136)
+texture = ExtResource("2_y1ap5")
+
+[node name="StairsPart5" type="Sprite2D" parent="."]
+modulate = Color(0.69751346, 0.6645552, 0.29876998, 1)
+position = Vector2(0, -184)
+texture = ExtResource("2_y1ap5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -24)
+shape = SubResource("RectangleShape2D_fxsyw")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(0, -223)
+shape = SubResource("RectangleShape2D_fxsyw")
+
+[node name="Hint" type="Label" parent="."]
+offset_left = -8.0
+offset_top = 16.0
+offset_right = 74.0
+offset_bottom = 45.0
+scale = Vector2(0.25, 0.25)
+theme_override_fonts/font = ExtResource("3_y1ap5")
+theme_override_font_sizes/font_size = 32
+text = "E/X"
+metadata/_edit_use_anchors_ = true
+
+[node name="Hint2" type="Label" parent="."]
+offset_left = -8.0
+offset_top = -274.0
+offset_right = 74.0
+offset_bottom = -245.0
+scale = Vector2(0.25, 0.25)
+theme_override_fonts/font = ExtResource("3_y1ap5")
+theme_override_font_sizes/font_size = 32
+text = "E/X"
+metadata/_edit_use_anchors_ = true
+
+[node name="StairsFull" type="Sprite2D" parent="."]
+modulate = Color(0.69803923, 0.6627451, 0.29803923, 1)
+position = Vector2(4, -236)
+texture = ExtResource("5_gpubg")
+region_enabled = true
+region_rect = Rect2(0, 0, 136, 56)

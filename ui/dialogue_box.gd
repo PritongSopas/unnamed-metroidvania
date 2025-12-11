@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+signal dialogue_finished
+
 @onready var textbox_container = get_node("TextboxContainer")
 @onready var start_symbol = textbox_container.get_node("MarginContainer/HBoxContainer/Start")
 @onready var label = textbox_container.get_node("MarginContainer/HBoxContainer/Label")
@@ -60,6 +62,9 @@ func type_line(line: String) -> void:
 
 func show_dialogue(lines: Array) -> void:
 	show_textbox()
+	
 	for line in lines:
 		await type_line(line)
+	emit_signal("dialogue_finished")
+	
 	hide_textbox()

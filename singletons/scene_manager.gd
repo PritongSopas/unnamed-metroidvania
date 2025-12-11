@@ -3,13 +3,12 @@ extends Node
 signal interaction_started
 signal interaction_ended
 
-@onready var fade_layer = get_tree().current_scene.get_node("FadeLayer")
-@onready var dialogue_box = get_tree().current_scene.get_node("DialogueBox")
-
+var fade_layer: Node = null
+var dialogue_box: Node = null
 var player: Node = null
 var zone: Node = null
 
-var is_busy = false
+var freeze = false
 
 func register_player(p):
 	player = p
@@ -32,7 +31,10 @@ func start_game(scene_path: String, entrance_id: String):
 			player_instance = player_scene.instantiate()
 			
 		get_tree().current_scene.call_deferred("add_child", player_instance)
-		SceneManager.register_player(player_instance)
+		
+		player = player_instance
+		fade_layer = get_tree().current_scene.get_node("FadeLayer")
+		dialogue_box = get_tree().current_scene.get_node("DialogueBox")
 		
 		change_scene_to(scene_path, entrance_id)
 
@@ -40,9 +42,9 @@ func change_scene_to(scene_path: String, entrance_id: String):
 	call_deferred("_change_scene_deferred", scene_path, entrance_id)
 
 func _change_scene_deferred(scene_path: String, entrance_id: String):
-	if fade_layer:
-		await fade_layer.fade_out(1)
-		
+	await fade_layer.fade_out(0.5)
+	
+	var saved_velocity = player.velocity
 	var current_zone = get_tree().current_scene.get_node("CurrentZone")
 	
 	var new_zone = load(scene_path).instantiate()
@@ -58,14 +60,16 @@ func _change_scene_deferred(scene_path: String, entrance_id: String):
 	var spawn_point = new_zone.get_entrance(entrance_id)
 	if spawn_point and player:
 		player.global_position = spawn_point.global_position
-		player.velocity = Vector2.ZERO
+		player.velocity = saved_velocity
 		
-	if fade_layer:
-		await fade_layer.fade_in(1)
+	await fade_layer.fade_in(0.5)
 
 func show_dialogue(lines: Array) -> void:
-	is_busy = true
+	freeze = true
 	emit_signal("interaction_started")
+	
 	dialogue_box.show_dialogue(lines)
+	await dialogue_box.dialogue_finished
+	
 	emit_signal("interaction_ended")
-	is_busy = false
+	freeze = false

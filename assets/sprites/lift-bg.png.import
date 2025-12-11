@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmx8ume32l335"
-path="res://.godot/imported/stairs_part3.png-0a497b7ee13ad540ad0244c977ed4463.ctex"
+uid="uid://bnpg4rmvy2exn"
+path="res://.godot/imported/lift-bg.png-991aa258731706d7c96190df08cab092.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/stairs_part3.png"
-dest_files=["res://.godot/imported/stairs_part3.png-0a497b7ee13ad540ad0244c977ed4463.ctex"]
+source_file="res://assets/sprites/lift-bg.png"
+dest_files=["res://.godot/imported/lift-bg.png-991aa258731706d7c96190df08cab092.ctex"]
 
 [params]
 

@@ -1,8 +1,10 @@
 extends Area2D
+class_name DialogueModule
 
 @onready var dialogue_sprite = get_node("DialogueSprite")
 
 @export var dialogue_lines: Dictionary = {}
+@export var fallback_lines: Array = []
 
 var player_in_range: bool = false
 

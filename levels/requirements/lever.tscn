@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://bb4s55ljw4dlm"]
+
+[ext_resource type="Script" uid="uid://ccmvvd32ywa2p" path="res://levels/requirements/lever.gd" id="1_otoxp"]
+[ext_resource type="FontFile" uid="uid://dlgjna8dltq4i" path="res://assets/fonts/PixelatedEleganceRegular-ovyAA.ttf" id="2_uoh2u"]
+[ext_resource type="Texture2D" uid="uid://bb52impptcyr6" path="res://assets/sprites/lever_off.png" id="3_24qcu"]
+[ext_resource type="Texture2D" uid="uid://c7anw54087cr3" path="res://assets/sprites/lever_on.png" id="4_u1qem"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4nn8"]
+size = Vector2(48, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_277qn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_24qcu")
+}],
+"loop": true,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_u1qem")
+}],
+"loop": true,
+"name": &"on",
+"speed": 5.0
+}]
+
+[node name="Lever" type="Area2D"]
+script = ExtResource("1_otoxp")
+
+[node name="Range" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l4nn8")
+
+[node name="Hint" type="Label" parent="."]
+offset_left = -10.0
+offset_top = -16.0
+offset_right = 72.0
+offset_bottom = 13.0
+scale = Vector2(0.25, 0.25)
+theme_override_fonts/font = ExtResource("2_uoh2u")
+theme_override_font_sizes/font_size = 32
+text = "E/X"
+metadata/_edit_use_anchors_ = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 2
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_277qn")
+animation = &"off"

@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://x4m5a72sedpy"]
+
+[ext_resource type="Texture2D" uid="uid://unf4f661dh6" path="res://assets/sprites/gate_open_foreground.png" id="1_5ytay"]
+[ext_resource type="Texture2D" uid="uid://2nvrtlp4vt21" path="res://assets/sprites/gate.png" id="1_gxfs1"]
+[ext_resource type="Script" uid="uid://dk45rowekabfc" path="res://levels/objectives/porticullis_gate.gd" id="1_nm7lu"]
+[ext_resource type="Texture2D" uid="uid://xq88f14yeuvt" path="res://assets/sprites/gate_open_background.png" id="2_guttl"]
+[ext_resource type="FontFile" uid="uid://dlgjna8dltq4i" path="res://assets/fonts/PixelatedEleganceRegular-ovyAA.ttf" id="5_2sw7g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wliq6"]
+size = Vector2(44, 48)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nm7lu"]
+size = Vector2(88, 48)
+
+[node name="PorticullisGate" type="StaticBody2D"]
+script = ExtResource("1_nm7lu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, 0)
+shape = SubResource("RectangleShape2D_wliq6")
+
+[node name="Hint" type="Label" parent="."]
+offset_left = -16.0
+offset_top = -32.0
+offset_right = 66.0
+offset_bottom = -3.0
+scale = Vector2(0.25, 0.25)
+theme_override_fonts/font = ExtResource("5_2sw7g")
+theme_override_font_sizes/font_size = 32
+text = "E/X"
+metadata/_edit_use_anchors_ = true
+
+[node name="SpriteOpenFore" type="Sprite2D" parent="."]
+z_index = 1
+texture = ExtResource("1_5ytay")
+
+[node name="SpriteOpenBack" type="Sprite2D" parent="."]
+texture = ExtResource("2_guttl")
+
+[node name="SpriteClosed" type="Sprite2D" parent="."]
+texture = ExtResource("1_gxfs1")
+
+[node name="InteractionRange" type="Area2D" parent="."]
+position = Vector2(-6, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionRange"]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_nm7lu")

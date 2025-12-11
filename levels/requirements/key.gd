@@ -12,6 +12,7 @@ func _ready() -> void:
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
 		FlagData.flags[id] = true
+		GameState.emit_signal("requirements_changed")
 		animation_player.play("collected")
 	
 func _on_animation_finished() -> void:

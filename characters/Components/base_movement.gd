@@ -11,6 +11,8 @@ var dash_time = 0.2
 var dash_timer = 0.0
 
 func _physics_process(delta: float) -> void:
+	if SceneManager.freeze: return
+	
 	apply_gravity(delta)
 	
 	if is_dashing:

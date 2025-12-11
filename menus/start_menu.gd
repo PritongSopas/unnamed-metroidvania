@@ -8,4 +8,4 @@ func _ready() -> void:
 	button.pressed.connect(_on_Button_pressed)
 
 func _on_Button_pressed():
-	SceneManager.start_game("res://levels/level_1/level_1_zone_1.tscn", "default")
+	SceneManager.start_game("res://levels/level_1/level_1_zone_3.tscn", "default")

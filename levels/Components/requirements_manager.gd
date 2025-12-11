@@ -1,6 +1,6 @@
 extends Node2D
 
-const whitelist = ["berry_bush"]
+const whitelist = ["berry_bush", "lever"]
 
 func _ready() -> void:
 	call_deferred("_spawn_requirements")
@@ -10,7 +10,6 @@ func _spawn_requirements() -> void:
 	for spawn in spawns:
 		if spawn.requirement_scene:
 			var scene_name = spawn.requirement_scene.resource_path.get_file().get_basename()
-			print(scene_name)
 			if scene_name in whitelist:
 				pass
 			elif FlagData.flags.get(spawn.flag_id, false):
@@ -19,6 +18,9 @@ func _spawn_requirements() -> void:
 		var requirement = spawn.requirement_scene.instantiate()
 		if "id" in requirement:
 			requirement.id = spawn.flag_id
+			
+		if "dialogue" in requirement:
+			requirement.dialogue = spawn.dialogue
 				
 		add_child(requirement)
 		requirement.global_position = spawn.global_position
