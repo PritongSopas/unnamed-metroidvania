@@ -381,7 +381,7 @@ gradient = SubResource("Gradient_aqktx")
 position = Vector2(-46, -11)
 
 [node name="DefaultEntrance" parent="Entrances" index="0"]
-position = Vector2(221, -67)
+position = Vector2(70, -29)
 
 [node name="FromZone2Entrance" parent="Entrances" index="1" instance=ExtResource("2_g1eba")]
 position = Vector2(-122, -477)

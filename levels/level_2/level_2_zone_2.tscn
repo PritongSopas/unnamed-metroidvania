@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://iyp2hbkanbj7"]
+[gd_scene load_steps=20 format=4 uid="uid://iyp2hbkanbj7"]
 
 [ext_resource type="PackedScene" uid="uid://by0ro8ivgc6rq" path="res://levels/base_level.tscn" id="1_57a05"]
 [ext_resource type="PackedScene" uid="uid://v753e6eiufdu" path="res://levels/Components/base_exit.tscn" id="2_8n1ry"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dxg4sm8p5ruib" path="res://assets/tiles/Tileset_12.png" id="4_44xfn"]
 [ext_resource type="Texture2D" uid="uid://cy4y4iisjxun6" path="res://assets/sprites/bridge-tiles.png" id="5_4dtxx"]
 [ext_resource type="PackedScene" uid="uid://bnk4uo7m140wp" path="res://levels/objectives/boulder.tscn" id="6_k8alx"]
+[ext_resource type="PackedScene" uid="uid://1otvbiypttf5" path="res://levels/Components/base_enemy_spawn.tscn" id="7_4dtxx"]
+[ext_resource type="PackedScene" uid="uid://0qu0qt6x3s00" path="res://characters/enemy/ant_enemy.tscn" id="8_cl8sf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8n1ry"]
 size = Vector2(75, 31)
@@ -207,6 +209,9 @@ texture = ExtResource("5_4dtxx")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_44xfn")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4dtxx"]
+size = Vector2(110, 41)
+
 [sub_resource type="Gradient" id="Gradient_k8alx"]
 offsets = PackedFloat32Array(0, 0.39285713)
 
@@ -245,6 +250,60 @@ tile_set = SubResource("TileSet_eah1g")
 [node name="Bridge_Tiles" type="TileMapLayer" parent="TileMapLayers" index="3"]
 tile_map_data = PackedByteArray("AAABAAAAAAADAAMAAAAAAAAAAAAFAAMAAAD+/wAAAAADAAAAAAD//wAAAAAEAAAAAAA=")
 tile_set = SubResource("TileSet_gksre")
+
+[node name="Ant1" parent="EnemySpawns" index="0" instance=ExtResource("7_4dtxx")]
+position = Vector2(-402, -191)
+enemy_scene = ExtResource("8_cl8sf")
+enemy_id = "ant_9"
+
+[node name="Ant2" parent="EnemySpawns" index="1" instance=ExtResource("7_4dtxx")]
+position = Vector2(167, -411)
+enemy_scene = ExtResource("8_cl8sf")
+enemy_id = "ant_9"
+
+[node name="Ant3" parent="EnemySpawns" index="2" instance=ExtResource("7_4dtxx")]
+position = Vector2(378, -409)
+enemy_scene = ExtResource("8_cl8sf")
+enemy_id = "ant_9"
+
+[node name="Ant4" parent="EnemySpawns" index="3" instance=ExtResource("7_4dtxx")]
+position = Vector2(364, -180)
+enemy_scene = ExtResource("8_cl8sf")
+enemy_id = "ant_9"
+
+[node name="Ant5" parent="EnemySpawns" index="4" instance=ExtResource("7_4dtxx")]
+position = Vector2(312, -26)
+enemy_scene = ExtResource("8_cl8sf")
+enemy_id = "ant_9"
+
+[node name="Ant6" parent="EnemySpawns" index="5" instance=ExtResource("7_4dtxx")]
+position = Vector2(-468, -20)
+enemy_scene = ExtResource("8_cl8sf")
+enemy_id = "ant_9"
+
+[node name="Ant7" parent="EnemySpawns" index="6" instance=ExtResource("7_4dtxx")]
+position = Vector2(-421, -22)
+enemy_scene = ExtResource("8_cl8sf")
+enemy_id = "ant_9"
+
+[node name="Ant8" parent="EnemySpawns" index="7" instance=ExtResource("7_4dtxx")]
+position = Vector2(-378, -22)
+enemy_scene = ExtResource("8_cl8sf")
+enemy_id = "ant_9"
+
+[node name="Ant9" parent="EnemySpawns" index="8" instance=ExtResource("7_4dtxx")]
+position = Vector2(-454, -453)
+enemy_scene = ExtResource("8_cl8sf")
+enemy_id = "ant_9"
+
+[node name="Ant10" parent="EnemySpawns" index="9" instance=ExtResource("7_4dtxx")]
+position = Vector2(-247, -434)
+enemy_scene = ExtResource("8_cl8sf")
+enemy_id = "ant_9"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/DefaultCheckpoint" index="0"]
+position = Vector2(198, -23)
+shape = SubResource("RectangleShape2D_4dtxx")
 
 [node name="Boulder" parent="Objectives" index="0" instance=ExtResource("6_k8alx")]
 position = Vector2(-574.00006, -469)

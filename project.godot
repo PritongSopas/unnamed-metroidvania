@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="unnamed-platformer"
+config/name="Endlings"
 run/main_scene="uid://c01ppm6tvusc"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"

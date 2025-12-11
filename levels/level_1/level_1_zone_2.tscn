@@ -275,28 +275,28 @@ position = Vector2(182, -21)
 position = Vector2(149, -9)
 
 [node name="Rat1" parent="EnemySpawns" index="0" instance=ExtResource("6_j6ieb")]
-position = Vector2(-427, -372)
+position = Vector2(-445, -391)
 enemy_scene = ExtResource("7_s6gmi")
-enemy_id = "rat_1"
+enemy_id = "rat_1535"
 
 [node name="Rat2" parent="EnemySpawns" index="1" instance=ExtResource("6_j6ieb")]
 position = Vector2(-756, -197)
 enemy_scene = ExtResource("7_s6gmi")
-enemy_id = "rat_2"
+enemy_id = "rat_253"
 
 [node name="Ant1" parent="EnemySpawns" index="2" instance=ExtResource("6_j6ieb")]
 enemy_scene = ExtResource("8_q5uw4")
 enemy_id = "ant_1"
 
 [node name="Ant2" parent="EnemySpawns" index="3" instance=ExtResource("6_j6ieb")]
-position = Vector2(-181, -370)
+position = Vector2(-157, -399)
 enemy_scene = ExtResource("8_q5uw4")
-enemy_id = "ant_2"
+enemy_id = "ant_2355"
 
 [node name="Ant3" parent="EnemySpawns" index="4" instance=ExtResource("6_j6ieb")]
 position = Vector2(-781, -359)
 enemy_scene = ExtResource("8_q5uw4")
-enemy_id = "ant_3"
+enemy_id = "ant_3213"
 
 [node name="Checkpoints" parent="." index="5"]
 position = Vector2(-179, -14)

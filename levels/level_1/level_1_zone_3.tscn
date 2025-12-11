@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://1scmanx1fj02"]
+[gd_scene load_steps=40 format=4 uid="uid://1scmanx1fj02"]
 
 [ext_resource type="PackedScene" uid="uid://by0ro8ivgc6rq" path="res://levels/base_level.tscn" id="1_5b4im"]
 [ext_resource type="PackedScene" uid="uid://v753e6eiufdu" path="res://levels/Components/base_exit.tscn" id="2_dteh4"]
@@ -399,6 +399,9 @@ sources/3 = SubResource("TileSetAtlasSource_hr5gp")
 sources/7 = SubResource("TileSetAtlasSource_yy2gq")
 sources/4 = SubResource("TileSetAtlasSource_ud3pq")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l3k6i"]
+size = Vector2(20, 49)
+
 [sub_resource type="Gradient" id="Gradient_j6ieb"]
 offsets = PackedFloat32Array(0, 0.39285713)
 
@@ -412,6 +415,9 @@ position = Vector2(128, 16)
 
 [node name="DefaultEntrance" parent="Entrances" index="0"]
 position = Vector2(-5, 21)
+
+[node name="Exits" parent="." index="1"]
+position = Vector2(-2, 37)
 
 [node name="ToZone2" parent="Exits" index="1" instance=ExtResource("2_dteh4")]
 target_scene = "uid://dlbcelt4vpdef"
@@ -448,27 +454,29 @@ tile_set = SubResource("TileSet_ro3dj")
 [node name="Ant1" parent="EnemySpawns" index="0" instance=ExtResource("6_fxxf1")]
 position = Vector2(-200, -18)
 enemy_scene = ExtResource("7_dteh4")
-enemy_id = "ant_1"
+enemy_id = "ant_121"
 
 [node name="Ant2" parent="EnemySpawns" index="1" instance=ExtResource("6_fxxf1")]
-position = Vector2(225, -335)
+position = Vector2(225, -348)
 enemy_scene = ExtResource("7_dteh4")
-enemy_id = "ant_2"
+enemy_id = "ant_2213"
 
-[node name="Ant3" parent="EnemySpawns" index="2" instance=ExtResource("6_fxxf1")]
-position = Vector2(272, -26)
-enemy_scene = ExtResource("7_dteh4")
-enemy_id = "ant_3"
-
-[node name="Rat1" parent="EnemySpawns" index="3" instance=ExtResource("6_fxxf1")]
+[node name="Rat1" parent="EnemySpawns" index="2" instance=ExtResource("6_fxxf1")]
 position = Vector2(136, -330)
 enemy_scene = ExtResource("8_xtbiy")
-enemy_id = "rat_1"
+enemy_id = "rat_131"
 
-[node name="Rat2" parent="EnemySpawns" index="4" instance=ExtResource("6_fxxf1")]
+[node name="Rat2" parent="EnemySpawns" index="3" instance=ExtResource("6_fxxf1")]
 position = Vector2(-462, -131)
 enemy_scene = ExtResource("8_xtbiy")
-enemy_id = "rat_2"
+enemy_id = "rat_231"
+
+[node name="DefaultCheckpoint" parent="Checkpoints" index="0"]
+checkpoint_id = "default213"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Checkpoints/DefaultCheckpoint" index="0"]
+position = Vector2(173, -25.5)
+shape = SubResource("RectangleShape2D_l3k6i")
 
 [node name="LadderLever" parent="Requirements" index="0" instance=ExtResource("15_cb6ba")]
 position = Vector2(-536, -28)
